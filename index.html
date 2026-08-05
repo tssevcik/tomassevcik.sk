@@ -332,7 +332,95 @@
 .bpost .bmore{display:inline-flex;align-items:center;gap:8px;margin-top:20px;color:var(--accent);font-weight:600;font-size:.92rem}
 .blog-all{display:flex;justify-content:center;margin-top:34px}
 @media (max-width:900px){.blog-grid{grid-template-columns:1fr}}
+
+/* ===== FAQ ===== */
+.faq-list{display:grid;gap:12px;max-width:840px;margin:0 auto}
+.faq-item{border:1px solid var(--line);border-radius:16px;background:var(--surface);overflow:hidden;transition:border-color .25s var(--ease),background .25s}
+.faq-item:hover{border-color:var(--line-strong)}
+.faq-item[open]{background:var(--surface-2);border-color:var(--line-strong)}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 26px;font-family:'Saira Condensed',sans-serif;font-weight:700;text-transform:uppercase;font-size:1.12rem;letter-spacing:.01em;color:#F3F3F1}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:hover{color:var(--accent)}
+.faq-q-ico{flex:0 0 auto;width:22px;height:22px;position:relative;transition:transform .25s var(--ease)}
+.faq-q-ico::before,.faq-q-ico::after{content:"";position:absolute;background:var(--accent);border-radius:2px}
+.faq-q-ico::before{top:10px;left:2px;width:18px;height:2px}
+.faq-q-ico::after{left:10px;top:2px;width:2px;height:18px;transition:opacity .25s var(--ease),transform .25s var(--ease)}
+.faq-item[open] .faq-q-ico::after{opacity:0;transform:rotate(90deg)}
+.faq-a{padding:0 26px 24px;color:var(--ink-dim);font-size:1.02rem;line-height:1.7;max-width:66ch}
+@media (max-width:640px){.faq-item summary{padding:18px 20px;font-size:1rem}.faq-a{padding:0 20px 20px}}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Od koľkých rokov môže dieťa začať?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Od 7–8 rokov. Nepozerám sa však na dátum narodenia, ale na pohybovú vyspelosť."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Je silový tréning pre deti bezpečný? Nezastaví im rast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Áno. Rast nebrzdí — naopak, kvalitný pohyb rastúce telo posilňuje a znižuje riziko zranení."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Musí dieťa robiť nejaký šport, aby mohlo prísť?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nemusí. Šport je bonus, nie podmienka — často začínajú aj deti, ktoré sa chcú len zlepšiť v pohybe a získať silu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ako často treba trénovať, aby to malo zmysel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Odporúčam 1–2× do týždňa. Presný počet nastavíme aj podľa toho, koľko má športových tréningov v klube."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dá sa tréning skombinovať s klubovým tréningom?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Presne na to je určený. Kondičná príprava má klubový tréning podporiť, nie s ním súperiť."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ako prebieha prvé stretnutie?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Prvá konzultácia je zadarmo. Prejdeme si ciele, zhodnotíme pohybové schopnosti a podľa toho nastavíme ďalší postup."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Čo si má dieťa priniesť na prvý tréning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Športové oblečenie, čistú športovú obuv a fľašu s vodou."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Musí byť rodič prítomný na tréningu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nemusí. Rodičia sú vítaní, ale väčšina detí sa sústredí lepšie, keď trénujú samy."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -646,6 +734,51 @@
       </div>
     </div>
     <p class="price-note">Ceny „pre dvoch" sú uvedené za jednu osobu. Všetky balíky majú platnosť 1 mesiac.</p>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="blk alt" id="faq">
+  <div class="wrap">
+    <div class="sec-head rv" style="max-width:720px">
+      <span class="eyebrow">FAQ</span>
+      <h2>Časté otázky</h2>
+      <p>Ak tu odpoveď nenájdete, ozvite sa mi — rád vám poradím.</p>
+    </div>
+    <div class="faq-list rv">
+      <details class="faq-item">
+        <summary>Od koľkých rokov môže dieťa začať?<span class="faq-q-ico" aria-hidden="true"></span></summary>
+        <div class="faq-a">Od 7–8 rokov. Nepozerám sa však na dátum narodenia, ale na pohybovú vyspelosť.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Je silový tréning pre deti bezpečný? Nezastaví im rast?<span class="faq-q-ico" aria-hidden="true"></span></summary>
+        <div class="faq-a">Áno. Rast nebrzdí — naopak, kvalitný pohyb rastúce telo posilňuje a znižuje riziko zranení.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Musí dieťa robiť nejaký šport, aby mohlo prísť?<span class="faq-q-ico" aria-hidden="true"></span></summary>
+        <div class="faq-a">Nemusí. Šport je bonus, nie podmienka — často začínajú aj deti, ktoré sa chcú len zlepšiť v pohybe a získať silu.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Ako často treba trénovať, aby to malo zmysel?<span class="faq-q-ico" aria-hidden="true"></span></summary>
+        <div class="faq-a">Odporúčam 1–2× do týždňa. Presný počet nastavíme aj podľa toho, koľko má športových tréningov v klube.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Dá sa tréning skombinovať s klubovým tréningom?<span class="faq-q-ico" aria-hidden="true"></span></summary>
+        <div class="faq-a">Presne na to je určený. Kondičná príprava má klubový tréning podporiť, nie s ním súperiť.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Ako prebieha prvé stretnutie?<span class="faq-q-ico" aria-hidden="true"></span></summary>
+        <div class="faq-a">Prvá konzultácia je zadarmo. Prejdeme si ciele, zhodnotíme pohybové schopnosti a podľa toho nastavíme ďalší postup.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Čo si má dieťa priniesť na prvý tréning?<span class="faq-q-ico" aria-hidden="true"></span></summary>
+        <div class="faq-a">Športové oblečenie, čistú športovú obuv a fľašu s vodou.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Musí byť rodič prítomný na tréningu?<span class="faq-q-ico" aria-hidden="true"></span></summary>
+        <div class="faq-a">Nemusí. Rodičia sú vítaní, ale väčšina detí sa sústredí lepšie, keď trénujú samy.</div>
+      </details>
+    </div>
   </div>
 </section>
 
