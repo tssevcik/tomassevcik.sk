@@ -219,7 +219,8 @@
   .cred-item .ci-d{color:var(--muted);font-size:.86rem;margin-top:5px;font-weight:500;letter-spacing:.02em}
 
   /* ---------- TESTIMONIALS ---------- */
-  .tst-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .tst.wide{grid-column:span 2}
   .tst{border:1px solid var(--line);border-radius:var(--radius);padding:32px 30px;display:flex;flex-direction:column;gap:22px;background:var(--lift),var(--surface)}
   .tst .rule{width:30px;height:2px;background:var(--accent)}
   .tst p{color:var(--ink-dim);font-size:1.02rem;line-height:1.6;flex-grow:1}
@@ -307,6 +308,7 @@
     .steps{grid-template-columns:1fr;gap:0}
     .step,.step:not(:last-child){padding:32px 0}
     .tst-grid{grid-template-columns:1fr}
+    .tst.wide{grid-column:auto}
     .price-grid{grid-template-columns:repeat(2,1fr)}
     .cred-grid{grid-template-columns:1fr;gap:48px}
   }
@@ -592,6 +594,11 @@
       <h2>Skúsenosti mojich klientov</h2>
     </div>
     <div class="tst-grid rv">
+      <article class="tst wide">
+        <div class="rule"></div>
+        <p>Pán Ševčík je úžasný kondičný tréner so skvelým prístupom k deťom. Oceňujem najmä jeho kamarátsku, ale profesionálnu komunikáciu, schopnosť udržať pozornosť počas celého tréningu a pozitívny vplyv na synovo sebavedomie. Spolu prekonávajú jeho limity a je fascinujúce sledovať, ako syn športovo aj mentálne rastie. Pomôže, povzbudí, namotivuje, pochváli. Syn chodí domov nadšený a motivovaný a páči sa mu, čo všetko už dokáže. Odporúčam na 110 %!</p>
+        <div class="who"><div class="nm">Rodič, syn 12 rokov</div><div class="sp">Šport — Futbal</div></div>
+      </article>
       <article class="tst">
         <div class="rule"></div>
         <p>Chodíme cvičiť s 9-ročným synom po opakovanej zlomenine nohy. Syn sa na tréningy teší, prístup je skvelý — získal si ho od prvej hodiny. Každým tréningom vidno zlepšenie. Určite odporúčame.</p>
