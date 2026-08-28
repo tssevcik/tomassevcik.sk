@@ -219,9 +219,7 @@
   .cred-item .ci-d{color:var(--muted);font-size:.86rem;margin-top:5px;font-weight:500;letter-spacing:.02em}
 
   /* ---------- TESTIMONIALS ---------- */
-  .tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .tst.wide{grid-column:span 2}
-  .tst{border:1px solid var(--line);border-radius:var(--radius);padding:32px 30px;display:flex;flex-direction:column;gap:22px;background:var(--lift),var(--surface)}
+    .tst{border:1px solid var(--line);border-radius:var(--radius);padding:32px 30px;display:flex;flex-direction:column;gap:22px;background:var(--lift),var(--surface)}
   .tst .rule{width:30px;height:2px;background:var(--accent)}
   .tst p{color:var(--ink-dim);font-size:1.02rem;line-height:1.6;flex-grow:1}
   .tst .who{border-top:1px solid var(--line);padding-top:18px}
@@ -307,8 +305,6 @@
     .contact{grid-template-columns:1fr}
     .steps{grid-template-columns:1fr;gap:0}
     .step,.step:not(:last-child){padding:32px 0}
-    .tst-grid{grid-template-columns:1fr}
-    .tst.wide{grid-column:auto}
     .price-grid{grid-template-columns:repeat(2,1fr)}
     .cred-grid{grid-template-columns:1fr;gap:48px}
   }
@@ -350,6 +346,22 @@
 .faq-item[open] .faq-q-ico::after{opacity:0;transform:rotate(90deg)}
 .faq-a{padding:0 26px 24px;color:var(--ink-dim);font-size:1.02rem;line-height:1.7;max-width:66ch}
 @media (max-width:640px){.faq-item summary{padding:18px 20px;font-size:1rem}.faq-a{padding:0 20px 20px}}
+
+  /* ===== REFERENCIE — pohyblivý pás ===== */
+  .tst-marquee{position:relative;width:100vw;margin-left:calc(50% - 50vw);overflow:hidden;padding:6px 0;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);
+    mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}
+  .tst-track{display:flex;gap:20px;width:max-content;animation:tstScroll 60s linear infinite}
+  .tst-marquee:hover .tst-track{animation-play-state:paused}
+  .tst-track .tst{flex:0 0 340px;width:340px;padding:26px 24px;gap:16px;border-radius:16px}
+  .tst-track .tst p{font-size:.94rem;line-height:1.58}
+  .tst-track .tst .rule{width:26px}
+  .tst-track .tst .who{padding-top:14px}
+  .tst-track .tst .who .nm{font-size:.97rem}
+  .tst-track .tst .who .sp{font-size:.78rem;margin-top:3px}
+  @keyframes tstScroll{from{transform:translate3d(0,0,0)}to{transform:translate3d(calc(-50% - 10px),0,0)}}
+  @media (max-width:640px){.tst-track .tst{flex-basis:280px;width:280px;padding:22px 20px}.tst-track{animation-duration:48s}}
+  @media (prefers-reduced-motion:reduce){.tst-track{animation:none;overflow-x:auto}}
 </style>
 <script type="application/ld+json">
 {
@@ -593,37 +605,69 @@
       <span class="eyebrow">Povedali o mne</span>
       <h2>Skúsenosti mojich klientov</h2>
     </div>
-    <div class="tst-grid rv">
-      <article class="tst">
-        <div class="rule"></div>
-        <p>Pán Ševčík je úžasný kondičný tréner so skvelým prístupom k deťom. Oceňujem najmä jeho kamarátsku, ale profesionálnu komunikáciu, schopnosť udržať pozornosť počas celého tréningu a pozitívny vplyv na synovo sebavedomie. Spolu prekonávajú jeho limity a je fascinujúce sledovať, ako syn športovo aj mentálne rastie. Pomôže, povzbudí, namotivuje, pochváli. Syn chodí domov nadšený a motivovaný a páči sa mu, čo všetko už dokáže. Odporúčam na 110 %!</p>
-        <div class="who"><div class="nm">Rodič, syn 12 rokov</div><div class="sp">Šport — Futbal</div></div>
-      </article>
-      <article class="tst">
-        <div class="rule"></div>
-        <p>Tomáša Ševčíka ako osobného trénera v Trenčíne môžeme odporúčať! Synovia — hokejisti (11 a 13 rokov) — k nemu chodia na tréningy a sme maximálne spokojní. Má skvelý, profesionálny prístup k deťom a tréningy výborne prispôsobuje ich veku a potrebám na ľade. Chlapcov tréningy bavia a my vidíme progres. Ďakujeme a určite budeme pokračovať.</p>
-        <div class="who"><div class="nm">Rodič, synovia 11 a 13 rokov</div><div class="sp">Šport — Hokej</div></div>
-      </article>
-      <article class="tst">
+    <div class="tst-marquee">
+      <div class="tst-track">
+        <article class="tst">
         <div class="rule"></div>
         <p>Chodíme cvičiť s 9-ročným synom po opakovanej zlomenine nohy. Syn sa na tréningy teší, prístup je skvelý — získal si ho od prvej hodiny. Každým tréningom vidno zlepšenie. Určite odporúčame.</p>
         <div class="who"><div class="nm">Rodič, syn 9 rokov</div><div class="sp">Návrat po zranení</div></div>
-      </article>
-      <article class="tst">
+        </article>
+        <article class="tst">
         <div class="rule"></div>
-        <p>Tomáš je profesionálny tréner, ktorý mi pomohol zlepšiť kondíciu, silu a úplne sa zbaviť bolesti kolien. Veľká vďaka za podporu a prístup.</p>
-        <div class="who"><div class="nm">Jakub, 15 rokov</div><div class="sp">Šport — Hokej</div></div>
-      </article>
-      <article class="tst">
-        <div class="rule"></div>
-        <p>Tréningy s Tomášom ma veľmi bavia. Motivuje ma jeho dobrá nálada a ľudský prístup. Pomohol mi dostať sa do formy a aj s bolesťou bedier.</p>
-        <div class="who"><div class="nm">Romana, 14 rokov</div><div class="sp">Šport — Parkurové jazdectvo</div></div>
-      </article>
-      <article class="tst">
+        <p>Pán Ševčík je úžasný kondičný tréner so skvelým prístupom k deťom. Oceňujem najmä jeho kamarátsku, ale profesionálnu komunikáciu, schopnosť udržať pozornosť počas celého tréningu a pozitívny vplyv na synovo sebavedomie. Spolu prekonávajú jeho limity a je fascinujúce sledovať, ako syn športovo aj mentálne rastie. Pomôže, povzbudí, namotivuje, pochváli. Syn chodí domov nadšený a motivovaný a páči sa mu, čo všetko už dokáže. Odporúčam na 110 %!</p>
+        <div class="who"><div class="nm">Rodič, syn 12 rokov</div><div class="sp">Šport — Futbal</div></div>
+        </article>
+        <article class="tst">
         <div class="rule"></div>
         <p>Tréningy ma bavia. Robíme veľa hier a cvičení, ktoré mi pomáhajú vo futbale. Teraz vládzem viac behať a som rýchlejší a silnejší.</p>
         <div class="who"><div class="nm">Tomáš, 10 rokov</div><div class="sp">Šport — Futbal</div></div>
-      </article>
+        </article>
+        <article class="tst">
+        <div class="rule"></div>
+        <p>Tréningy s Tomášom ma veľmi bavia. Motivuje ma jeho dobrá nálada a ľudský prístup. Pomohol mi dostať sa do formy a aj s bolesťou bedier.</p>
+        <div class="who"><div class="nm">Romana, 14 rokov</div><div class="sp">Šport — Parkurové jazdectvo</div></div>
+        </article>
+        <article class="tst">
+        <div class="rule"></div>
+        <p>Tomáša Ševčíka ako osobného trénera v Trenčíne môžeme odporúčať! Synovia — hokejisti (11 a 13 rokov) — k nemu chodia na tréningy a sme maximálne spokojní. Má skvelý, profesionálny prístup k deťom a tréningy výborne prispôsobuje ich veku a potrebám na ľade. Chlapcov tréningy bavia a my vidíme progres. Ďakujeme a určite budeme pokračovať.</p>
+        <div class="who"><div class="nm">Rodič, synovia 11 a 13 rokov</div><div class="sp">Šport — Hokej</div></div>
+        </article>
+        <article class="tst">
+        <div class="rule"></div>
+        <p>Tomáš je profesionálny tréner, ktorý mi pomohol zlepšiť kondíciu, silu a úplne sa zbaviť bolesti kolien. Veľká vďaka za podporu a prístup.</p>
+        <div class="who"><div class="nm">Jakub, 15 rokov</div><div class="sp">Šport — Hokej</div></div>
+        </article>
+        <article class="tst" aria-hidden="true">
+        <div class="rule"></div>
+        <p>Chodíme cvičiť s 9-ročným synom po opakovanej zlomenine nohy. Syn sa na tréningy teší, prístup je skvelý — získal si ho od prvej hodiny. Každým tréningom vidno zlepšenie. Určite odporúčame.</p>
+        <div class="who"><div class="nm">Rodič, syn 9 rokov</div><div class="sp">Návrat po zranení</div></div>
+        </article>
+        <article class="tst" aria-hidden="true">
+        <div class="rule"></div>
+        <p>Pán Ševčík je úžasný kondičný tréner so skvelým prístupom k deťom. Oceňujem najmä jeho kamarátsku, ale profesionálnu komunikáciu, schopnosť udržať pozornosť počas celého tréningu a pozitívny vplyv na synovo sebavedomie. Spolu prekonávajú jeho limity a je fascinujúce sledovať, ako syn športovo aj mentálne rastie. Pomôže, povzbudí, namotivuje, pochváli. Syn chodí domov nadšený a motivovaný a páči sa mu, čo všetko už dokáže. Odporúčam na 110 %!</p>
+        <div class="who"><div class="nm">Rodič, syn 12 rokov</div><div class="sp">Šport — Futbal</div></div>
+        </article>
+        <article class="tst" aria-hidden="true">
+        <div class="rule"></div>
+        <p>Tréningy ma bavia. Robíme veľa hier a cvičení, ktoré mi pomáhajú vo futbale. Teraz vládzem viac behať a som rýchlejší a silnejší.</p>
+        <div class="who"><div class="nm">Tomáš, 10 rokov</div><div class="sp">Šport — Futbal</div></div>
+        </article>
+        <article class="tst" aria-hidden="true">
+        <div class="rule"></div>
+        <p>Tréningy s Tomášom ma veľmi bavia. Motivuje ma jeho dobrá nálada a ľudský prístup. Pomohol mi dostať sa do formy a aj s bolesťou bedier.</p>
+        <div class="who"><div class="nm">Romana, 14 rokov</div><div class="sp">Šport — Parkurové jazdectvo</div></div>
+        </article>
+        <article class="tst" aria-hidden="true">
+        <div class="rule"></div>
+        <p>Tomáša Ševčíka ako osobného trénera v Trenčíne môžeme odporúčať! Synovia — hokejisti (11 a 13 rokov) — k nemu chodia na tréningy a sme maximálne spokojní. Má skvelý, profesionálny prístup k deťom a tréningy výborne prispôsobuje ich veku a potrebám na ľade. Chlapcov tréningy bavia a my vidíme progres. Ďakujeme a určite budeme pokračovať.</p>
+        <div class="who"><div class="nm">Rodič, synovia 11 a 13 rokov</div><div class="sp">Šport — Hokej</div></div>
+        </article>
+        <article class="tst" aria-hidden="true">
+        <div class="rule"></div>
+        <p>Tomáš je profesionálny tréner, ktorý mi pomohol zlepšiť kondíciu, silu a úplne sa zbaviť bolesti kolien. Veľká vďaka za podporu a prístup.</p>
+        <div class="who"><div class="nm">Jakub, 15 rokov</div><div class="sp">Šport — Hokej</div></div>
+        </article>
+      </div>
     </div>
   </div>
 </section>
