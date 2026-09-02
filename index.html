@@ -227,7 +227,8 @@
   .tst .who .sp{color:var(--muted);font-size:.82rem;font-weight:500;letter-spacing:.04em;margin-top:4px}
 
   /* ---------- PRICING ---------- */
-  .toggle{display:inline-flex;border:1px solid var(--line);border-radius:100px;padding:4px;margin-top:26px}
+  .toggle{display:inline-flex;flex-wrap:wrap;justify-content:center;border:1px solid var(--line);border-radius:100px;padding:4px;margin-top:26px}
+  @media (max-width:600px){.toggle{border-radius:22px}.toggle button{padding:9px 15px;font-size:.85rem}}
   .toggle button{font-family:'Barlow',sans-serif;font-weight:600;font-size:.92rem;padding:10px 24px;border-radius:100px;border:0;background:transparent;color:var(--muted);cursor:pointer;transition:.24s var(--ease)}
   .toggle button.on{background:var(--surface-2);color:var(--ink)}
 
@@ -710,10 +711,11 @@
     <div class="sec-head rv" style="max-width:720px">
       <span class="eyebrow">Cenník</span>
       <h2>Vyber si formu tréningu</h2>
-      <p>Úvodná konzultácia, testovanie a prvý tréning sú vždy zadarmo. Ceny balíkov sa líšia podľa toho, či trénuješ sám alebo vo dvojici.</p>
+      <p>Úvodná konzultácia, testovanie a prvý tréning sú vždy zadarmo. Ceny sa líšia podľa toho, či trénuješ sám, vo dvojici alebo v menšej skupinke.</p>
       <div class="toggle" role="tablist" aria-label="Počet osôb">
         <button class="on" id="tOne" role="tab" aria-selected="true">Pre jedného</button>
         <button id="tTwo" role="tab" aria-selected="false">Pre dvoch</button>
+        <button id="tThree" role="tab" aria-selected="false">Pre troch a viac</button>
       </div>
     </div>
 
@@ -734,14 +736,14 @@
       <div class="pcard">
         <div class="pk">Jednorázový tréning</div>
         <div class="sess">1× 60 min. osobný silovo-kondičný tréning</div>
-        <div class="amt">25€</div>
+        <div class="amt">30€</div>
         <div class="per">za tréning</div>
         <div class="pbtn"><a href="#kontakt">Vybrať</a></div>
       </div>
       <div class="pcard">
         <div class="pk">Malý balík</div>
         <div class="sess">6× 60 min. tréning · platnosť 1 mesiac</div>
-        <div class="amt">140€</div>
+        <div class="amt">170€</div>
         <div class="per">6 tréningov</div>
         <div class="pbtn"><a href="#kontakt">Vybrať</a></div>
       </div>
@@ -749,14 +751,14 @@
         <div class="badge">Obľúbené</div>
         <div class="pk">Stredný balík</div>
         <div class="sess">8× 60 min. tréning · platnosť 1 mesiac</div>
-        <div class="amt">190€</div>
+        <div class="amt">230€</div>
         <div class="per">8 tréningov</div>
         <div class="pbtn"><a href="#kontakt">Vybrať</a></div>
       </div>
       <div class="pcard">
         <div class="pk">Veľký balík</div>
         <div class="sess">12× 60 min. tréning · platnosť 1 mesiac</div>
-        <div class="amt">290€</div>
+        <div class="amt">350€</div>
         <div class="per">12 tréningov</div>
         <div class="pbtn"><a href="#kontakt">Vybrať</a></div>
       </div>
@@ -767,14 +769,14 @@
       <div class="pcard">
         <div class="pk">Jednorázový tréning</div>
         <div class="sess">1× 60 min. osobný silovo-kondičný tréning</div>
-        <div class="amt">20€</div>
+        <div class="amt">25€</div>
         <div class="per">/ osoba</div>
         <div class="pbtn"><a href="#kontakt">Vybrať</a></div>
       </div>
       <div class="pcard">
         <div class="pk">Malý balík</div>
         <div class="sess">6× 60 min. tréning · platnosť 1 mesiac</div>
-        <div class="amt">110€</div>
+        <div class="amt">140€</div>
         <div class="per">/ osoba</div>
         <div class="pbtn"><a href="#kontakt">Vybrať</a></div>
       </div>
@@ -782,19 +784,51 @@
         <div class="badge">Obľúbené</div>
         <div class="pk">Stredný balík</div>
         <div class="sess">8× 60 min. tréning · platnosť 1 mesiac</div>
-        <div class="amt">150€</div>
+        <div class="amt">190€</div>
         <div class="per">/ osoba</div>
         <div class="pbtn"><a href="#kontakt">Vybrať</a></div>
       </div>
       <div class="pcard">
         <div class="pk">Veľký balík</div>
         <div class="sess">12× 60 min. tréning · platnosť 1 mesiac</div>
-        <div class="amt">230€</div>
+        <div class="amt">290€</div>
         <div class="per">/ osoba</div>
         <div class="pbtn"><a href="#kontakt">Vybrať</a></div>
       </div>
     </div>
-    <p class="price-note">Ceny „pre dvoch" sú uvedené za jednu osobu. Všetky balíky majú platnosť 1 mesiac.</p>
+    <!-- PRE TROCH A VIAC -->
+    <div class="price-grid rv" id="gridThree" style="display:none">
+      <div class="pcard">
+        <div class="pk">Jednorázový tréning</div>
+        <div class="sess">1× 60 min. silovo-kondičný tréning</div>
+        <div class="amt">20€</div>
+        <div class="per">/ osoba</div>
+        <div class="pbtn"><a href="#kontakt">Vybrať</a></div>
+      </div>
+      <div class="pcard">
+        <div class="pk">Malý balík</div>
+        <div class="sess">6× 60 min. tréning · platnosť 1 mesiac</div>
+        <div class="amt">115€</div>
+        <div class="per">/ osoba</div>
+        <div class="pbtn"><a href="#kontakt">Vybrať</a></div>
+      </div>
+      <div class="pcard feat">
+        <div class="badge">Obľúbené</div>
+        <div class="pk">Stredný balík</div>
+        <div class="sess">8× 60 min. tréning · platnosť 1 mesiac</div>
+        <div class="amt">155€</div>
+        <div class="per">/ osoba</div>
+        <div class="pbtn"><a href="#kontakt">Vybrať</a></div>
+      </div>
+      <div class="pcard">
+        <div class="pk">Veľký balík</div>
+        <div class="sess">12× 60 min. tréning · platnosť 1 mesiac</div>
+        <div class="amt">235€</div>
+        <div class="per">/ osoba</div>
+        <div class="pbtn"><a href="#kontakt">Vybrať</a></div>
+      </div>
+    </div>
+    <p class="price-note">Ceny pre dvoch a pre troch a viac sú uvedené za jednu osobu. Všetky balíky majú platnosť 1 mesiac.</p>
   </div>
 </section>
 
@@ -922,17 +956,21 @@
   burger.addEventListener('click', () => links.classList.toggle('open'));
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
 
-  const tOne = document.getElementById('tOne'), tTwo = document.getElementById('tTwo');
-  const gOne = document.getElementById('gridOne'), gTwo = document.getElementById('gridTwo');
-  function setMode(one){
-    tOne.classList.toggle('on', one); tTwo.classList.toggle('on', !one);
-    tOne.setAttribute('aria-selected', one); tTwo.setAttribute('aria-selected', !one);
-    gOne.style.display = one ? 'grid' : 'none';
-    gTwo.style.display = one ? 'none' : 'grid';
-    (one ? gOne : gTwo).querySelectorAll('.rv, .pcard').forEach(el => el.classList.add('in'));
+  const priceTabs = [
+    {b: document.getElementById('tOne'),   g: document.getElementById('gridOne')},
+    {b: document.getElementById('tTwo'),   g: document.getElementById('gridTwo')},
+    {b: document.getElementById('tThree'), g: document.getElementById('gridThree')}
+  ];
+  function setMode(idx){
+    priceTabs.forEach((t, n) => {
+      const on = (n === idx);
+      t.b.classList.toggle('on', on);
+      t.b.setAttribute('aria-selected', on);
+      t.g.style.display = on ? 'grid' : 'none';
+      if (on) t.g.querySelectorAll('.rv, .pcard').forEach(el => el.classList.add('in'));
+    });
   }
-  tOne.addEventListener('click', () => setMode(true));
-  tTwo.addEventListener('click', () => setMode(false));
+  priceTabs.forEach((t, n) => t.b.addEventListener('click', () => setMode(n)));
 
   const rvs = document.querySelectorAll('.rv');
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
