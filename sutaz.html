@@ -734,6 +734,18 @@
     color: var(--ink-muted);
     font-weight: 500;
   }
+  .testimonial-name {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .testimonial-sub {
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin-top: 3px;
+  }
 
   /* FAQ */
   .faq {
@@ -920,6 +932,24 @@
     .sticky-count { font-size: 13px; }
     .btn-sticky { padding: 10px 18px; font-size: 12px; }
   }
+
+  .rules { margin-top: 4px; }
+  .rules summary {
+    cursor: pointer;
+    color: var(--accent);
+    font-weight: 500;
+    list-style: none;
+    display: inline-block;
+  }
+  .rules summary::-webkit-details-marker { display: none; }
+  .rules[open] summary { margin-bottom: 20px; }
+  .rules-body h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 20px 0 6px;
+  }
+  .rules-body p { margin: 0 0 8px; }
 </style>
 </head>
 <body>
@@ -1092,7 +1122,7 @@
 
         <div class="form-checkbox">
           <input type="checkbox" id="gdpr" name="gdpr" required>
-          <label for="gdpr">Súhlasím so spracovaním osobných údajov pre účely súťaže. <a href="#legal">Podrobnosti tu.</a></label>
+          <label for="gdpr">Súhlasím so spracovaním osobných údajov na účely súťaže. <a href="#legal">Podrobnosti tu.</a></label>
         </div>
 
         <button type="submit" class="btn-primary">Prihlásiť dieťa do súťaže</button>
@@ -1140,29 +1170,56 @@
 <!-- TESTIMONIALS -->
 <section class="section">
   <div class="container">
-    <div class="section-label">Recenzie</div>
-    <h2 class="section-title">Čo o mne píšu rodičia</h2>
-    <p class="section-lead">Reálne správy od rodičov detí, ktoré u mňa trénujú.</p>
+    <div class="section-label">Povedali o mne</div>
+    <h2 class="section-title" style="margin-bottom: 56px;">Skúsenosti mojich klientov</h2>
 
     <div class="testimonials">
       <div class="testimonial">
-        <p class="testimonial-quote">Syn sa na tréningy teší, prístup je skvelý, získal si ho od prvej hodiny. Každým tréningom vidno zlepšenie.</p>
-        <div class="testimonial-author">Rodič 9-ročného syna (návrat po zlomenine)</div>
+        <p class="testimonial-quote">Chodíme cvičiť s 9-ročným synom po opakovanej zlomenine nohy. Syn sa na tréningy teší, prístup je skvelý - získal si ho od prvej hodiny. Každým tréningom vidno zlepšenie. Určite odporúčame.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-name">Rodič, syn 9 rokov</div>
+          <div class="testimonial-sub">Návrat po zranení</div>
+        </div>
       </div>
 
       <div class="testimonial">
-        <p class="testimonial-quote">Kamarátska, ale profesionálna komunikácia, schopnosť udržať pozornosť počas celého tréningu a pozitívny vplyv na synovo sebavedomie. Syn chodí domov nadšený a motivovaný.</p>
-        <div class="testimonial-author">Rodič 12-ročného futbalistu</div>
+        <p class="testimonial-quote">Pán Ševčík je úžasný kondičný tréner so skvelým prístupom k deťom. Oceňujem najmä jeho kamarátsku, ale profesionálnu komunikáciu, schopnosť udržať pozornosť počas celého tréningu a pozitívny vplyv na synovo sebavedomie. Spolu prekonávajú jeho limity a je fascinujúce sledovať, ako syn športovo aj mentálne rastie. Pomôže, povzbudí, namotivuje, pochváli. Syn chodí domov nadšený a motivovaný a páči sa mu, čo všetko už dokáže. Odporúčam na <span class="nowrap">110 %</span>!</p>
+        <div class="testimonial-author">
+          <div class="testimonial-name">Rodič, syn 12 rokov</div>
+          <div class="testimonial-sub">Šport - Futbal</div>
+        </div>
       </div>
 
       <div class="testimonial">
-        <p class="testimonial-quote">Tréningy výborne prispôsobuje ich veku a potrebám. Chlapcov tréningy bavia a my vidíme progres.</p>
-        <div class="testimonial-author">Rodič dvoch hokejistov, 11 a 13 rokov</div>
+        <p class="testimonial-quote">Tomáša Ševčíka ako osobného trénera v Trenčíne môžeme odporúčať! Synovia - hokejisti <span class="nowrap">(11 a 13 rokov)</span> - k nemu chodia na tréningy a sme maximálne spokojní. Má skvelý, profesionálny prístup k deťom a tréningy výborne prispôsobuje ich veku a potrebám na ľade. Chlapcov tréningy bavia a my vidíme progres. Ďakujeme a určite budeme pokračovať.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-name">Rodič, synovia 11 a 13 rokov</div>
+          <div class="testimonial-sub">Šport - Hokej</div>
+        </div>
       </div>
 
       <div class="testimonial">
-        <p class="testimonial-quote">Pomohol si mi zlepšiť kondíciu, silu a úplne sa zbaviť bolesti kolien.</p>
-        <div class="testimonial-author">Jakub, 15-ročný hokejista</div>
+        <p class="testimonial-quote">Tomáš je profesionálny tréner, ktorý mi pomohol zlepšiť kondíciu, silu a úplne sa zbaviť bolesti kolien. Veľká vďaka za podporu a prístup.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-name">Jakub, 15 rokov</div>
+          <div class="testimonial-sub">Šport - Hokej</div>
+        </div>
+      </div>
+
+      <div class="testimonial">
+        <p class="testimonial-quote">Tréningy ma bavia. Robíme veľa hier a cvičení, ktoré mi pomáhajú vo futbale. Teraz vládzem viac behať a som rýchlejší a silnejší.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-name">Tomáš, 10 rokov</div>
+          <div class="testimonial-sub">Šport - Futbal</div>
+        </div>
+      </div>
+
+      <div class="testimonial">
+        <p class="testimonial-quote">Tréningy s Tomášom ma veľmi bavia. Motivuje ma jeho dobrá nálada a ľudský prístup. Pomohol mi dostať sa do formy a aj s bolesťou bedier.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-name">Romana, 14 rokov</div>
+          <div class="testimonial-sub">Šport - Parkurové jazdectvo</div>
+        </div>
       </div>
     </div>
   </div>
@@ -1183,7 +1240,7 @@
           <div class="faq-toggle"></div>
         </div>
         <div class="faq-answer">
-          Za 7 dní od spustenia súťaže vyžrebujem jedného hlavného víťaza spomedzi všetkých prihlásených. Kontaktujem vás osobne telefonicky do 24 hodín po vyžrebovaní. Deti na druhom a treťom mieste získajú kompletnú diagnostiku a úvodný tréning zadarmo.
+          Po skončení súťaže (7 dní od spustenia) vyžrebujem spomedzi všetkých prihlásených tri miesta: hlavného víťaza a dve deti na druhom a treťom mieste. Všetkým trom rodičom zavolám do 24 hodín po vyžrebovaní.
         </div>
       </div>
 
@@ -1193,7 +1250,7 @@
           <div class="faq-toggle"></div>
         </div>
         <div class="faq-answer">
-          Rodičia detí vo veku 11 až 15 rokov, ktoré aktívne športujú (hokej, futbal alebo iný šport) a bývajú v Trenčíne alebo dostupnej vzdialenosti (do 50 km). Osobné tréningy prebiehajú v HYBKO Trenčín.
+          Súťaž je pre deti vo veku <span class="nowrap">11 až 15 rokov</span>, ktoré aktívne športujú - hokej, futbal alebo iný šport. Keďže tréningy prebiehajú osobne v HYBKO Trenčín, je určená rodinám z Trenčína a okolia <span class="nowrap">(do 50 km)</span>.
         </div>
       </div>
 
@@ -1203,7 +1260,7 @@
           <div class="faq-toggle"></div>
         </div>
         <div class="faq-answer">
-          Víťaz začína do 2 týždňov od vyžrebovania. Termíny osobných tréningov si dohodneme na základe vášho rozvrhu a mojich voľných slotov. Druhé a tretie miesto si rezervujú termín v HYBKO do 3 týždňov po vyžrebovaní.
+          Začiatok si dohodneme spoločne - s hlavným víťazom aj s deťmi na druhom a treťom mieste. Termíny prispôsobím vášmu rozvrhu a mojim voľným termínom, tréningy prebiehajú v HYBKO Trenčín.
         </div>
       </div>
 
@@ -1213,17 +1270,17 @@
           <div class="faq-toggle"></div>
         </div>
         <div class="faq-answer">
-          Program je 1 na 1 v HYBKO Trenčín, osobná prítomnosť je nevyhnutná. Ak bývate ďaleko a nemôžete dochádzať pravidelne, program pre vaše dieťa nie je vhodný.
+          Program prebieha výhradne osobne <span class="nowrap">1 na 1</span> v HYBKO Trenčín, online forma nie je možná. Počas 8 týždňov treba dochádzať pravidelne - preto je súťaž určená rodinám z Trenčína a okolia <span class="nowrap">do 50 km</span>.
         </div>
       </div>
 
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-question">
-          <span>Ako viem, že to nie je podvod?</span>
+          <span>Dá sa to nejako overiť?</span>
           <div class="faq-toggle"></div>
         </div>
         <div class="faq-answer">
-          Som verejná osoba, moje portfolio nájdete na tomassevcik.sk a na Instagrame @ts.sevcik. HYBKO je etablované pohybové centrum v Trenčíne. Recenzie od reálnych klientov máte vyššie.
+          Všetko si môžete overiť. Trénujem pod vlastným menom - web <a href="https://tomassevcik.sk" target="_blank" rel="noopener">tomassevcik.sk</a>, Instagram <a href="https://www.instagram.com/ts.sevcik" target="_blank" rel="noopener">@ts.sevcik</a>, tréningy prebiehajú v pohybovom centre HYBKO v Trenčíne. Recenzie rodičov máte vyššie aj na Googli.<br>A ak chcete, pred prihlásením mi pokojne zavolajte: <a href="tel:+421949310411"><span class="nowrap">0949 310 411</span></a>.
         </div>
       </div>
 
@@ -1233,7 +1290,7 @@
           <div class="faq-toggle"></div>
         </div>
         <div class="faq-answer">
-          Nie. Prihlásenie je úplne zadarmo. Ak vaše dieťa vyhrá hlavné miesto, celý 8-týždňový program dostáva zadarmo. Druhé a tretie miesto rovnako. Nijako vás k ničomu netlačím.
+          Nie. Prihlásenie je zadarmo a výhry tiež - hlavný víťaz dostane celý <span class="nowrap">8-týždňový</span> program bez poplatku, druhé a tretie miesto diagnostiku a úvodný tréning. Jediné, čo sa platí na mieste, je vstup do pohybového centra HYBKO <span class="nowrap">(6 €)</span> za každú návštevu. Žiadne iné náklady, žiadny záväzok pokračovať.
         </div>
       </div>
     </div>
@@ -1246,12 +1303,51 @@
     <div class="legal">
       <div class="section-label" style="margin-bottom: 16px;">Podmienky súťaže</div>
       <p style="margin-bottom: 12px;">
-        Súťaž organizuje Tomáš Ševčík, silovo-kondičný tréner, HYBKO Trenčín. Prihlásenie do súťaže je bezplatné a dobrovoľné. Súťaž trvá 7 dní od spustenia. Hlavného víťaza aj druhé a tretie miesto vyberám losovaním. O výhre budete informovaní telefonicky do 24 hodín po vyžrebovaní.
+        Súťaž organizuje Tomáš Ševčík, silovo-kondičný tréner, HYBKO Trenčín. Prihlásenie je bezplatné a dobrovoľné, súťaž trvá 7 dní od spustenia. Hlavného víťaza aj druhé a tretie miesto vyberám losovaním, o výhre informujem telefonicky do 24 hodín po vyžrebovaní. Jediný náklad pre výhercu je vstup do pohybového centra HYBKO <span class="nowrap">(6 €)</span>.
       </p>
-      <p>
-        Prihlásením súhlasíte so spracovaním osobných údajov (meno, telefón, e-mail, vek dieťaťa, šport) pre účely priebehu súťaže a kontaktu s výsledkom. Údaje neposkytujem tretím stranám. Máte právo na výmaz, prístup a opravu údajov.
-        <a href="#">Kompletné podmienky súťaže a GDPR politika →</a>
+      <p style="margin-bottom: 12px;">
+        Prihlásením súhlasíte so spracovaním osobných údajov (meno, telefón, e-mail, vek dieťaťa, šport) na účely priebehu súťaže a oznámenia výsledku. Údaje nepoužívam na marketing a neposkytujem ich ďalej. Máte právo na prístup, opravu aj výmaz - stačí napísať na <a href="mailto:ts.sevcik@gmail.com">ts.sevcik@gmail.com</a>.
       </p>
+      <p style="margin-bottom: 20px;">
+        Táto súťaž nie je žiadnym spôsobom sponzorovaná, podporovaná ani spravovaná spoločnosťou Instagram/Meta.
+      </p>
+
+      <details class="rules" id="pravidla">
+        <summary>Kompletné pravidlá súťaže →</summary>
+        <div class="rules-body">
+          <h4>1. Organizátor</h4>
+          <p>Organizátorom súťaže je Tomáš Ševčík, silovo-kondičný tréner pôsobiaci v pohybovom centre HYBKO, Ľudovíta Stárka 2843, 911 05 Trenčín. Kontakt: <a href="mailto:ts.sevcik@gmail.com">ts.sevcik@gmail.com</a>, <span class="nowrap">0949 310 411</span>.</p>
+
+          <h4>2. Trvanie súťaže</h4>
+          <p>Súťaž trvá 7 dní od jej zverejnenia na Instagrame @ts.sevcik. Presný termín uzávierky prihlášok je uvedený na tejto stránke. Prihlášky doručené po uzávierke sa do žrebovania nezaraďujú.</p>
+
+          <h4>3. Kto sa môže zapojiť</h4>
+          <p>Do súťaže môže dieťa prihlásiť jeho rodič alebo zákonný zástupca. Dieťa musí mať v čase prihlásenia 11 až 15 rokov, aktívne športovať a bývať v Trenčíne alebo v okolí do 50 km, aby mohlo pravidelne dochádzať na tréningy. Na jedno dieťa je možná jedna prihláška; duplicitné prihlášky sa vyradia.</p>
+
+          <h4>4. Ako sa zapojiť</h4>
+          <p>Vyplnením a odoslaním prihlasovacieho formulára na tejto stránke. Účasť je bezplatná a nie je podmienená žiadnym nákupom.</p>
+
+          <h4>5. Výhry</h4>
+          <p><strong>1. miesto:</strong> kompletný 8-týždňový tréningový program 1 na 1 v HYBKO Trenčín (vstupná pohybová a kondičná diagnostika, individuálny tréningový plán, 8 osobných tréningov, priebežné merania, týždenný report pre rodiča, výživový a regeneračný protokol, záverečný report) v hodnote 600 €.<br>
+          <strong>2. a 3. miesto:</strong> vstupná pohybová a kondičná diagnostika, úvodný tréning 1 na 1, konkrétne odporúčania s konzultáciou a písomný report.</p>
+          <p>Výhry nie je možné vymeniť za peniaze ani previesť na inú osobu. Vstup do pohybového centra HYBKO (6 € za návštevu) nie je súčasťou výhry a hradí ho účastník.</p>
+
+          <h4>6. Žrebovanie a oznámenie výsledku</h4>
+          <p>Výhercov vyberá organizátor náhodným žrebovaním spomedzi všetkých platných prihlášok do 3 dní po uzávierke. Výhercov kontaktuje telefonicky do 24 hodín po vyžrebovaní. Ak sa výhercu nepodarí zastihnúť ani do 7 dní od vyžrebovania alebo výhru odmietne, organizátor vyžrebuje náhradníka.</p>
+
+          <h4>7. Čerpanie výhry</h4>
+          <p>Termíny si výherca a organizátor dohodnú po vzájomnej dohode podľa rozvrhu dieťaťa a voľných termínov organizátora. Čerpanie výhry musí začať do jedného mesiaca od vyžrebovania, inak nárok na výhru zaniká.</p>
+
+          <h4>8. Ochrana osobných údajov</h4>
+          <p>Odoslaním prihlášky udeľuje rodič alebo zákonný zástupca súhlas so spracovaním osobných údajov v rozsahu meno rodiča, telefón, e-mail, vek dieťaťa a šport, a to výlučne na účely priebehu súťaže, žrebovania a oznámenia výsledku. Údaje sa nepoužívajú na marketing a neposkytujú sa iným osobám. Údaje neúspešných účastníkov organizátor vymaže do 30 dní po skončení súťaže; údaje výhercov uchováva po dobu čerpania výhry. Súhlas je možné kedykoľvek odvolať a uplatniť právo na prístup, opravu alebo výmaz údajov e-mailom na <a href="mailto:ts.sevcik@gmail.com">ts.sevcik@gmail.com</a>.</p>
+
+          <h4>9. Instagram</h4>
+          <p>Táto súťaž nie je žiadnym spôsobom sponzorovaná, podporovaná, spravovaná ani spojená so spoločnosťou Instagram alebo Meta. Informácie poskytujete organizátorovi súťaže, nie spoločnosti Instagram.</p>
+
+          <h4>10. Ostatné</h4>
+          <p>Organizátor si vyhradzuje právo súťaž zo závažných dôvodov skrátiť, prerušiť alebo zrušiť a právo vyradiť prihlášky, ktoré nespĺňajú tieto pravidlá. Účasťou v súťaži účastník vyjadruje súhlas s týmito pravidlami.</p>
+        </div>
+      </details>
     </div>
   </div>
 </section>
