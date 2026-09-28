@@ -627,8 +627,9 @@
     overflow: hidden;
   }
 
+  .coach-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .coach-photo::after {
-    content: "TŠ";
+    content: none;
     position: absolute;
     font-size: 120px;
     font-weight: 200;
@@ -1021,17 +1022,10 @@
         </p>
         <ul class="prize-list" style="color: var(--ink);">
           <li>Vstupná pohybová a kondičná diagnostika</li>
-          <li>Úvodný tréning <span class="nowrap">1 na 1</span></li>
+          <li>Úvodný tréning 1 na 1</li>
           <li>Konkrétne odporúčania a konzultácia</li>
           <li>Písomný report s číslami</li>
         </ul>
-        <div class="prize-price">
-          <div>
-            <div style="font-size: 12px; color: var(--ink-subtle); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px;">Reálna hodnota</div>
-            <div class="price-original" style="color: var(--ink-muted);">200 €</div>
-          </div>
-          <div class="price-current">0 €</div>
-        </div>
       </div>
     </div>
   </div>
@@ -1042,7 +1036,7 @@
   <div class="form-card">
     <div class="form-content">
       <h2 class="form-title">Prihláste vaše dieťa do súťaže</h2>
-      <p class="form-sub">Trvá to minútu. Ozvem sa vám osobne do 24 hodín po žrebovaní.</p>
+      <p class="form-sub">Ozvem sa vám osobne do 24 hodín po vyžrebovaní.</p>
 
       <form onsubmit="submitForm(event)">
         <div class="form-group">
@@ -1056,7 +1050,7 @@
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="email">Email</label>
+          <label class="form-label" for="email">E-mail</label>
           <input class="form-input" type="email" id="email" name="email" required placeholder="jana@email.sk">
         </div>
 
@@ -1104,7 +1098,7 @@
         <button type="submit" class="btn-primary">Prihlásiť dieťa do súťaže</button>
 
         <p class="form-trust">
-          Váš email nikam neposielam. Kontaktujem vás iba osobne s výsledkom.
+          Údaje slúžia iba na vyhodnotenie súťaže a oznámenie výsledku.
         </p>
       </form>
     </div>
@@ -1113,7 +1107,7 @@
       <div class="success-icon">✓</div>
       <h3 style="font-size: 28px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 12px;">Ste v hre.</h3>
       <p style="color: var(--ink-muted); font-size: 17px; line-height: 1.5;">
-        Vaše dieťa je zaregistrované do súťaže. Ozvem sa vám osobne do 24 hodín po žrebovaní.
+        Vaše dieťa je zaregistrované do súťaže. Ozvem sa vám osobne do 24 hodín po vyžrebovaní.
       </p>
     </div>
   </div>
@@ -1123,36 +1117,21 @@
 <section class="section">
   <div class="container">
     <div class="section-label">Váš tréner</div>
-    <h2 class="section-title" style="margin-bottom: 56px;">Kto vaše dieťa bude trénovať</h2>
+    <h2 class="section-title" style="margin-bottom: 56px;">Kto bude vaše dieťa trénovať</h2>
     <div class="coach-grid">
-      <div class="coach-photo">FOTO</div>
+      <div class="coach-photo"><img src="/trener.jpg" alt="Tomáš Ševčík - silovo-kondičný tréner detí a mládeže, HYBKO Trenčín" loading="lazy" width="900" height="1125"></div>
       <div class="coach-body">
         <h3>Tomáš Ševčík</h3>
         <div class="coach-role">Silovo-kondičný tréner, HYBKO Trenčín</div>
         <p>
-          Dva roky pracujem výhradne s deťmi vo veku 7 až 15 rokov. Trénujem hokejistov z prípraviek Dukly, futbalistov z AS Trenčín aj deti mimo klubového športu.
+          Dva roky pracujem s deťmi vo veku <span class="nowrap">7 až 15 rokov</span>. Trénujem hokejistov, futbalistov aj mladých športovcov z ďalších športov - a rovnako deti mimo klubového športu.
         </p>
         <p>
-          Absolvoval som 8-mesačnú stáž v ELIX Bratislava, ktorý pripravuje vrcholových športovcov. Mám trénerskú kvalifikáciu 3. stupňa a 7 špecializovaných certifikátov v tréningu mládeže.
+          Mám za sebou trénerskú kvalifikáciu 3. stupňa, <span class="nowrap">8-mesačnú</span> stáž v ELIX Bratislava, kde sa pripravujú vrcholoví športovci, a 7 špecializovaných certifikátov.
         </p>
         <p>
-          Prijímam obmedzený počet detí, pretože každé trénujem osobne 1 na 1. Aj preto je pre mňa dôležité, kto sa do programu dostane.
+          Každé dieťa trénujem osobne <span class="nowrap">1 na 1</span>, preto prijímam len obmedzený počet detí. Víťaz súťaže dostane jedno z týchto miest.
         </p>
-
-        <div class="credentials">
-          <div class="cred-item">
-            <div class="cred-num">2<small>r</small></div>
-            <div class="cred-label">práce iba s deťmi 7-15</div>
-          </div>
-          <div class="cred-item">
-            <div class="cred-num">8<small>m</small></div>
-            <div class="cred-label">stáž ELIX Bratislava</div>
-          </div>
-          <div class="cred-item">
-            <div class="cred-num">7</div>
-            <div class="cred-label">špecializovaných certifikátov</div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -1204,7 +1183,7 @@
           <div class="faq-toggle"></div>
         </div>
         <div class="faq-answer">
-          Za 7 dní od spustenia súťaže vyžrebujem jedného hlavného víťaza spomedzi všetkých prihlásených. Kontaktujem vás osobne telefonicky do 24 hodín po žrebovaní. Deti na druhom a treťom mieste získajú kompletnú diagnostiku a úvodný tréning zadarmo.
+          Za 7 dní od spustenia súťaže vyžrebujem jedného hlavného víťaza spomedzi všetkých prihlásených. Kontaktujem vás osobne telefonicky do 24 hodín po vyžrebovaní. Deti na druhom a treťom mieste získajú kompletnú diagnostiku a úvodný tréning zadarmo.
         </div>
       </div>
 
@@ -1224,7 +1203,7 @@
           <div class="faq-toggle"></div>
         </div>
         <div class="faq-answer">
-          Víťaz začína do 2 týždňov od žrebovania. Termíny osobných tréningov si dohodneme na základe vášho rozvrhu a mojich voľných slotov. Druhé a tretie miesto si rezervujú termín v HYBKO do 3 týždňov po žrebovaní.
+          Víťaz začína do 2 týždňov od vyžrebovania. Termíny osobných tréningov si dohodneme na základe vášho rozvrhu a mojich voľných slotov. Druhé a tretie miesto si rezervujú termín v HYBKO do 3 týždňov po vyžrebovaní.
         </div>
       </div>
 
@@ -1267,10 +1246,10 @@
     <div class="legal">
       <div class="section-label" style="margin-bottom: 16px;">Podmienky súťaže</div>
       <p style="margin-bottom: 12px;">
-        Súťaž organizuje Tomáš Ševčík, silovo-kondičný tréner, HYBKO Trenčín. Prihlásenie do súťaže je bezplatné a dobrovoľné. Súťaž trvá 7 dní od spustenia. Hlavného víťaza aj druhé a tretie miesto vyberám losovaním. O výhre budete informovaní telefonicky do 24 hodín po žrebovaní.
+        Súťaž organizuje Tomáš Ševčík, silovo-kondičný tréner, HYBKO Trenčín. Prihlásenie do súťaže je bezplatné a dobrovoľné. Súťaž trvá 7 dní od spustenia. Hlavného víťaza aj druhé a tretie miesto vyberám losovaním. O výhre budete informovaní telefonicky do 24 hodín po vyžrebovaní.
       </p>
       <p>
-        Prihlásením súhlasíte so spracovaním osobných údajov (meno, telefón, email, vek dieťaťa, šport) pre účely priebehu súťaže a kontaktu s výsledkom. Údaje neposkytujem tretím stranám. Máte právo na výmaz, prístup a opravu údajov.
+        Prihlásením súhlasíte so spracovaním osobných údajov (meno, telefón, e-mail, vek dieťaťa, šport) pre účely priebehu súťaže a kontaktu s výsledkom. Údaje neposkytujem tretím stranám. Máte právo na výmaz, prístup a opravu údajov.
         <a href="#">Kompletné podmienky súťaže a GDPR politika →</a>
       </p>
     </div>
