@@ -3,7 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Súťaž pre rodičov hokejistov a futbalistov 11 až 15 rokov z Trenčína a okolia. Hlavná výhra: 8-týždňový tréningový program 1 na 1 v hodnote 600 €. Prihlasovanie do 7. 10. 2026.">
+<link rel="canonical" href="https://tomassevcik.sk/sutaz">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tomáš Ševčík - Silovo-kondičný tréner detí a mládeže">
+<meta property="og:title" content="Vyhrajte 8-týždňový tréningový program pre vaše dieťa. Zadarmo.">
+<meta property="og:description" content="Súťaž pre rodičov hokejistov a futbalistov 11 až 15 rokov z Trenčína a okolia. Hlavná výhra: 8-týždňový tréningový program 1 na 1 v hodnote 600 €. Prihlasovanie do 7. 10. 2026.">
+<meta property="og:url" content="https://tomassevcik.sk/sutaz">
+<meta property="og:image" content="https://tomassevcik.sk/og-sutaz.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@700&display=swap" rel="stylesheet">
 <title>Vyhrajte 8-týždňový tréningový program - Tomáš Ševčík</title>
 <style>
@@ -970,7 +984,7 @@
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <div class="kicker">Súťaž · Losujeme za 7 dní</div>
+    <div class="kicker">Súťaž · Prihlasovanie do 7. 10. 2026, 20:00</div>
     <h1 class="headline">
       Vyhrajte <span class="nowrap">8-týždňový</span> tréningový program pre vaše dieťa. <span class="accent">Zadarmo.</span>
     </h1>
@@ -1329,7 +1343,7 @@
           <p>Organizátorom súťaže je Tomáš Ševčík, silovo-kondičný tréner pôsobiaci v pohybovom centre HYBKO, Ľudovíta Stárka 2843, 911 05 Trenčín. Kontakt: <a href="mailto:ts.sevcik@gmail.com">ts.sevcik@gmail.com</a>, <span class="nowrap">0949 310 411</span>.</p>
 
           <h4>2. Trvanie súťaže</h4>
-          <p>Súťaž trvá 7 dní od jej zverejnenia na Instagrame @ts.sevcik. Presný termín uzávierky prihlášok je uvedený na tejto stránke. Prihlášky doručené po uzávierke sa do žrebovania nezaraďujú.</p>
+          <p>Súťaž trvá od 30. 9. 2026 (20:00) do 7. 10. 2026 (20:00), teda 7 dní od jej zverejnenia na Instagrame @ts.sevcik. Prihlášky doručené po uzávierke sa do žrebovania nezaraďujú.</p>
 
           <h4>3. Kto sa môže zapojiť</h4>
           <p>Do súťaže môže dieťa prihlásiť jeho rodič alebo zákonný zástupca. Dieťa musí mať v čase prihlásenia 11 až 15 rokov, aktívne športovať a bývať v Trenčíne alebo v okolí do 50 km, aby mohlo pravidelne dochádzať na tréningy. Na jedno dieťa je možná jedna prihláška; duplicitné prihlášky sa vyradia.</p>
@@ -1373,7 +1387,7 @@
 <div class="sticky-bar" id="stickyBar">
   <div class="sticky-text">
     <div class="sticky-label">Prihlasovanie končí</div>
-    <div class="sticky-count" id="stickyCount">za 7 dní</div>
+    <div class="sticky-count" id="stickyCount">do 7. 10. 20:00</div>
   </div>
   <button class="btn-sticky" onclick="document.getElementById('formular').scrollIntoView({behavior:'smooth'})">
     Prihlásiť dieťa →
@@ -1381,8 +1395,8 @@
 </div>
 
 <script>
-  // Countdown timer - 7 dní od načítania stránky
-  const deadline = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
+  // Odpočet do uzávierky prihlášok
+  const deadline = new Date('2026-10-07T20:00:00+02:00');
 
   function updateCountdown() {
     const now = new Date();
@@ -1393,7 +1407,11 @@
       document.getElementById('hours').textContent = '00';
       document.getElementById('minutes').textContent = '00';
       document.getElementById('seconds').textContent = '00';
-      document.getElementById('stickyCount').textContent = 'Súťaž skončila';
+      document.getElementById('stickyCount').textContent = 'Prihlasovanie skončilo';
+      const fc = document.querySelector('.form-content');
+      if (fc && !document.getElementById('closedMsg')) {
+        fc.innerHTML = '<div id="closedMsg" style="text-align:center;padding:24px 0;"><h3 style="font-size:24px;margin-bottom:10px;">Prihlasovanie je ukončené</h3><p style="color:var(--ink-muted);">Súťaž skončila 7. 10. 2026 o 20:00. Výhercom sa ozvem telefonicky do 24 hodín.</p></div>';
+      }
       return;
     }
 
