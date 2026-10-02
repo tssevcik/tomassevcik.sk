@@ -969,6 +969,15 @@
   .hero-video-play { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background: rgba(0,0,0,.18); cursor: pointer; z-index: 3; border-radius: inherit; transition: background .25s; }
   .hero-video-play:hover { background: rgba(0,0,0,.28); }
   .hero-video-play .play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+  .ref-box { margin: 32px auto 0; max-width: 520px; text-align: left; background: var(--bg-warm, #FFF7F0); border: 1px solid rgba(255,107,0,.25); border-radius: 16px; padding: 22px 22px 20px; }
+  .ref-title { font-weight: 700; font-size: 17px; color: var(--ink); margin-bottom: 6px; }
+  .ref-text { font-size: 14px; color: var(--ink-muted); line-height: 1.5; margin: 0 0 14px; }
+  .ref-link-row { display: flex; gap: 8px; }
+  .ref-link { flex: 1; min-width: 0; font-size: 14px; padding: 11px 12px; border: 1px solid rgba(0,0,0,.14); border-radius: 10px; background: #fff; color: var(--ink); }
+  .ref-copy { padding: 11px 16px; border: 0; border-radius: 10px; background: var(--ink); color: #fff; font-weight: 600; font-size: 14px; cursor: pointer; white-space: nowrap; }
+  .ref-copy.done { background: var(--success, #16a34a); }
+  .ref-share { display: inline-block; margin-top: 12px; padding: 11px 16px; border-radius: 10px; background: #25D366; color: #fff; font-weight: 600; font-size: 14px; text-decoration: none; }
 </style>
 <!-- Meta Pixel -->
 <script>
@@ -1177,8 +1186,18 @@ src="https://www.facebook.com/tr?id=702041403762513&ev=PageView&noscript=1"/></n
       <div class="success-icon">✓</div>
       <h3 style="font-size: 28px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 12px;">Ste v hre.</h3>
       <p style="color: var(--ink-muted); font-size: 17px; line-height: 1.5;">
-        Vaše dieťa je zaregistrované do súťaže. Ozvem sa vám osobne do 24 hodín po vyžrebovaní.
+        Vaše dieťa je zaregistrované do súťaže. Žrebovanie prebehne vo štvrtok <span class="nowrap">8. októbra</span>. Potvrdenie vám práve prišlo e-mailom.
       </p>
+
+      <div class="ref-box">
+        <div class="ref-title">Deti sa najviac tešia z tréningu, keď na ňom majú kamaráta.</div>
+        <p class="ref-text">Ak poznáte rodiča, ktorého dieťa športuje, pošlite mu svoj osobný odkaz. Za každého kamaráta, ktorý sa cez neho prihlási, získate ďalšiu šancu vyhrať 8-týždňový program. Bez limitu - 5 kamarátov = 5 ďalších šancí.</p>
+        <div class="ref-link-row">
+          <input class="ref-link" id="refLink" type="text" readonly value="">
+          <button type="button" class="ref-copy" id="refCopy">Kopírovať môj odkaz</button>
+        </div>
+        <a class="ref-share" id="refWhatsapp" href="#" target="_blank" rel="noopener">Poslať cez WhatsApp</a>
+      </div>
     </div>
   </div>
 </section>
@@ -1343,7 +1362,7 @@ src="https://www.facebook.com/tr?id=702041403762513&ev=PageView&noscript=1"/></n
     <div class="legal">
       <div class="section-label" style="margin-bottom: 16px;">Podmienky súťaže</div>
       <p style="margin-bottom: 12px;">
-        Súťaž organizuje Tomáš Ševčík, silovo-kondičný tréner, HYBKO Trenčín. Prihlásenie je bezplatné a dobrovoľné, súťaž trvá 7 dní od spustenia. Hlavného víťaza vyberám losovaním, ďalším vybraným účastníkom môžem ponúknuť bezplatnú diagnostiku a úvodný tréning. O výhre informujem telefonicky do 24 hodín po vyžrebovaní. Jediný náklad pre výhercu je vstup do pohybového centra HYBKO <span class="nowrap">(6 €)</span>.
+        Súťaž organizuje Tomáš Ševčík, silovo-kondičný tréner, HYBKO Trenčín. Prihlásenie je bezplatné a dobrovoľné, súťaž trvá 7 dní od spustenia. Hlavného víťaza vyberám losovaním, pričom za každého rodiča prihláseného cez váš osobný odkaz získate jeden žreb navyše. Ďalším vybraným účastníkom môžem ponúknuť bezplatnú diagnostiku a úvodný tréning. O výhre informujem telefonicky do 24 hodín po vyžrebovaní. Jediný náklad pre výhercu je vstup do pohybového centra HYBKO <span class="nowrap">(6 €)</span>.
       </p>
       <p style="margin-bottom: 12px;">
         Prihlásením súhlasíte so spracovaním osobných údajov (meno, telefón, e-mail, vek dieťaťa, šport) na účely priebehu súťaže a oznámenia výsledku. Údaje nepoužívam na marketing a neposkytujem ich ďalej. Máte právo na prístup, opravu aj výmaz - stačí napísať na <a href="mailto:ts.sevcik@gmail.com">ts.sevcik@gmail.com</a>.
@@ -1372,19 +1391,22 @@ src="https://www.facebook.com/tr?id=702041403762513&ev=PageView&noscript=1"/></n
           <strong>Ďalšie vybrané deti:</strong> vstupná pohybová a kondičná diagnostika, úvodný tréning 1 na 1, konkrétne odporúčania s konzultáciou a písomný report.</p>
           <p>Výhry nie je možné vymeniť za peniaze ani previesť na inú osobu. Vstup do pohybového centra HYBKO (6 € za návštevu) nie je súčasťou výhry a hradí ho účastník.</p>
 
-          <h4>6. Žrebovanie a oznámenie výsledku</h4>
-          <p>Hlavného víťaza vyberá organizátor náhodným žrebovaním spomedzi všetkých platných prihlášok do 3 dní po uzávierke a kontaktuje ho telefonicky do 24 hodín po vyžrebovaní. Ak sa výhercu nepodarí zastihnúť ani do 7 dní od vyžrebovania alebo výhru odmietne, organizátor vyžrebuje náhradníka. Ďalším účastníkom môže organizátor podľa vlastného uváženia ponúknuť bezplatnú diagnostiku a úvodný tréning; počet takto vybraných detí nie je obmedzený a na túto ponuku nevzniká nárok.</p>
+          <h4>6. Odporúčania a žreby navyše</h4>
+          <p>Každý účastník získa po prihlásení osobný odporúčací odkaz. Za každého ďalšieho rodiča, ktorý sa do súťaže prihlási cez tento odkaz a uvedie iný e-mail aj telefónne číslo než odporúčajúci, získa odporúčajúci účastník jeden žreb navyše. Počet žrebov navyše nie je obmedzený. Prihlášky s rovnakým e-mailom alebo telefónnym číslom sa počítajú ako jedna.</p>
 
-          <h4>7. Čerpanie výhry</h4>
+          <h4>7. Žrebovanie a oznámenie výsledku</h4>
+          <p>Hlavného víťaza vyberá organizátor náhodným žrebovaním spomedzi všetkých platných prihlášok (s prihliadnutím na počet žrebov podľa bodu 6) do 3 dní po uzávierke a kontaktuje ho telefonicky do 24 hodín po vyžrebovaní. Ak sa výhercu nepodarí zastihnúť ani do 7 dní od vyžrebovania alebo výhru odmietne, organizátor vyžrebuje náhradníka. Ďalším účastníkom môže organizátor podľa vlastného uváženia ponúknuť bezplatnú diagnostiku a úvodný tréning; počet takto vybraných detí nie je obmedzený a na túto ponuku nevzniká nárok.</p>
+
+          <h4>8. Čerpanie výhry</h4>
           <p>Termíny si výherca a organizátor dohodnú po vzájomnej dohode podľa rozvrhu dieťaťa a voľných termínov organizátora. Čerpanie výhry musí začať do jedného mesiaca od vyžrebovania, inak nárok na výhru zaniká.</p>
 
-          <h4>8. Ochrana osobných údajov</h4>
+          <h4>9. Ochrana osobných údajov</h4>
           <p>Odoslaním prihlášky udeľuje rodič alebo zákonný zástupca súhlas so spracovaním osobných údajov v rozsahu meno rodiča, telefón, e-mail, vek dieťaťa a šport, a to výlučne na účely priebehu súťaže, žrebovania a oznámenia výsledku. Údaje sa nepoužívajú na marketing a neposkytujú sa iným osobám. Údaje neúspešných účastníkov organizátor vymaže do 30 dní po skončení súťaže; údaje výhercov uchováva po dobu čerpania výhry. Súhlas je možné kedykoľvek odvolať a uplatniť právo na prístup, opravu alebo výmaz údajov e-mailom na <a href="mailto:ts.sevcik@gmail.com">ts.sevcik@gmail.com</a>.</p>
 
-          <h4>9. Instagram</h4>
+          <h4>10. Instagram</h4>
           <p>Táto súťaž nie je žiadnym spôsobom sponzorovaná, podporovaná, spravovaná ani spojená so spoločnosťou Instagram alebo Meta. Informácie poskytujete organizátorovi súťaže, nie spoločnosti Instagram.</p>
 
-          <h4>10. Ostatné</h4>
+          <h4>11. Ostatné</h4>
           <p>Organizátor si vyhradzuje právo súťaž zo závažných dôvodov skrátiť, prerušiť alebo zrušiť a právo vyradiť prihlášky, ktoré nespĺňajú tieto pravidlá. Účasťou v súťaži účastník vyjadruje súhlas s týmito pravidlami.</p>
         </div>
       </details>
@@ -1476,6 +1498,23 @@ src="https://www.facebook.com/tr?id=702041403762513&ev=PageView&noscript=1"/></n
     return (el.value || '').trim();
   }
 
+  // Odporúčací kód: zachytiť ?ref= z odkazu (zapamätať aj po návrate na stránku)
+  (function () {
+    const ref = new URLSearchParams(location.search).get('ref');
+    if (ref && /^[A-Z0-9]{6}$/i.test(ref)) {
+      try { localStorage.setItem('sutazRef', ref.toUpperCase()); } catch (_) {}
+    }
+  })();
+  function getIncomingRef() {
+    try { return localStorage.getItem('sutazRef') || ''; } catch (_) { return ''; }
+  }
+  function makeRefCode() {
+    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    let out = '';
+    for (let i = 0; i < 6; i++) out += chars[Math.floor(Math.random() * chars.length)];
+    return out;
+  }
+
   async function submitForm(e) {
     e.preventDefault();
     const form = e.target;
@@ -1484,22 +1523,30 @@ src="https://www.facebook.com/tr?id=702041403762513&ev=PageView&noscript=1"/></n
     btn.disabled = true;
     btn.textContent = 'Odosielam...';
 
+    const myCode = makeRefCode();
+    const incomingRef = getIncomingRef();
     const body = new URLSearchParams({
       'parent-name': labelOf(form, 'parent-name'),
       'phone':       labelOf(form, 'phone'),
       'email':       labelOf(form, 'email'),
       'age':         labelOf(form, 'age'),
       'sport':       labelOf(form, 'sport'),
-      'problem':     labelOf(form, 'problem')
+      'problem':     labelOf(form, 'problem'),
+      'code':        myCode,
+      'ref':         incomingRef === myCode ? '' : incomingRef
     });
 
     try {
       await fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', body });
       if (typeof fbq === 'function') fbq('track', 'Lead');
       document.querySelector('.form-content').style.display = 'none';
+      const link = 'https://tomassevcik.sk/sutaz?ref=' + myCode;
+      document.getElementById('refLink').value = link;
+      const msg = 'Pozri si túto súťaž pre deti, ktoré športujú - 8-týždňový tréningový program zadarmo: ' + link;
+      document.getElementById('refWhatsapp').href = 'https://wa.me/?text=' + encodeURIComponent(msg);
       const ok = document.getElementById('successMsg');
       ok.classList.add('active');
-      ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      ok.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } catch (err) {
       btn.disabled = false;
       btn.textContent = originalText;
@@ -1516,6 +1563,18 @@ src="https://www.facebook.com/tr?id=702041403762513&ev=PageView&noscript=1"/></n
       hvEl.play();
     });
     hvEl.addEventListener('ended', function () { hvBtn.style.display = 'block'; });
+  }
+
+  const refCopyBtn = document.getElementById('refCopy');
+  if (refCopyBtn) {
+    refCopyBtn.addEventListener('click', async function () {
+      const input = document.getElementById('refLink');
+      try { await navigator.clipboard.writeText(input.value); }
+      catch (_) { input.select(); document.execCommand('copy'); }
+      refCopyBtn.textContent = 'Skopírované';
+      refCopyBtn.classList.add('done');
+      setTimeout(function () { refCopyBtn.textContent = 'Kopírovať môj odkaz'; refCopyBtn.classList.remove('done'); }, 2500);
+    });
   }
 </script>
 
