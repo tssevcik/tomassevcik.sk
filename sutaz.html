@@ -1177,6 +1177,30 @@ src="https://www.facebook.com/tr?id=1074371878825995&ev=PageView&noscript=1"/></
           </select>
         </div>
 
+        <div class="form-group">
+          <label class="form-label" for="goal">Čo by ste chceli u svojho dieťaťa najviac zlepšiť?</label>
+          <select class="form-select" id="goal" name="goal" required>
+            <option value="">Vyberte</option>
+            <option value="rychlost">Rýchlosť a výbušnosť</option>
+            <option value="sila">Sila a kondícia</option>
+            <option value="koordinacia">Pohybové schopnosti a koordinácia</option>
+            <option value="vykon">Výkon na ihrisku / ľade</option>
+            <option value="sebavedomie">Sebavedomie a istota pri športe</option>
+            <option value="rozvoj">Celkový športový rozvoj</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="individual">Využíva vaše dieťa aktuálne aj individuálnu športovú prípravu?</label>
+          <select class="form-select" id="individual" name="individual" required>
+            <option value="">Vyberte</option>
+            <option value="pravidelne">Áno, pravidelne</option>
+            <option value="obcas">Áno, občas</option>
+            <option value="zvazujeme">Nie, ale zvažujeme to</option>
+            <option value="iba-klub">Nie, zatiaľ iba klubové tréningy</option>
+          </select>
+        </div>
+
         <div class="form-checkbox">
           <input type="checkbox" id="gdpr" name="gdpr" required>
           <label for="gdpr">Súhlasím so spracovaním osobných údajov na účely súťaže. <a href="#legal">Podrobnosti tu.</a></label>
@@ -1540,6 +1564,8 @@ src="https://www.facebook.com/tr?id=1074371878825995&ev=PageView&noscript=1"/></
       'age':         labelOf(form, 'age'),
       'sport':       labelOf(form, 'sport'),
       'problem':     labelOf(form, 'problem'),
+      'goal':        labelOf(form, 'goal'),
+      'individual':  labelOf(form, 'individual'),
       'code':        myCode,
       'ref':         incomingRef === myCode ? '' : incomingRef
     });
