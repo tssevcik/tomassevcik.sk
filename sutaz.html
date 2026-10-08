@@ -1537,6 +1537,28 @@ src="https://www.facebook.com/tr?id=1074371878825995&ev=PageView&noscript=1"/></
       try { localStorage.setItem('sutazRef', ref.toUpperCase()); } catch (_) {}
     }
   })();
+  // Atribúcia reklám: zachytiť UTM parametre a ad_id z URL (uložiť, aby ostali aj po návrate na stránku)
+  var UTM_KEYS = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','ad_id'];
+  (function () {
+    var q = new URLSearchParams(location.search);
+    UTM_KEYS.forEach(function (k) {
+      var v = q.get(k);
+      if (v) {
+        try { sessionStorage.setItem(k, v); } catch (_) {}
+        try { localStorage.setItem('sutaz_' + k, v); } catch (_) {}
+      }
+    });
+  })();
+  function getUtm() {
+    var out = {};
+    UTM_KEYS.forEach(function (k) {
+      var v = '';
+      try { v = sessionStorage.getItem(k) || ''; } catch (_) {}
+      if (!v) { try { v = localStorage.getItem('sutaz_' + k) || ''; } catch (_) {} }
+      out[k] = v;
+    });
+    return out;
+  }
   function getIncomingRef() {
     try { return localStorage.getItem('sutazRef') || ''; } catch (_) { return ''; }
   }
@@ -1569,6 +1591,8 @@ src="https://www.facebook.com/tr?id=1074371878825995&ev=PageView&noscript=1"/></
       'code':        myCode,
       'ref':         incomingRef === myCode ? '' : incomingRef
     });
+    var utm = getUtm();
+    UTM_KEYS.forEach(function (k) { body.append(k, utm[k]); });
 
     try {
       await fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', body });
