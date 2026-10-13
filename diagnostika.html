@@ -1098,7 +1098,7 @@ src="https://www.facebook.com/tr?id=1074371878825995&ev=PageView&noscript=1"/></
       <h2 class="form-title">Vyberte si termín</h2>
       <p class="form-sub">Kliknite na deň a hodinu, ktoré vám vyhovujú.<br>Potvrdenie príde e-mailom, stretneme sa v pohybovom centre HYBKO Trenčín.</p>
       <div class="calendly-wrap">
-        <div class="calendly-inline-widget" id="calendly"></div>
+        <div class="calendly-inline-widget" id="calendly" data-auto-load="false"></div>
       </div>
       <p class="calendly-fallback">
         Ak sa kalendár nenačíta, <a id="calendlyLink" href="#" target="_blank" rel="noopener">otvorte ho tu</a> alebo zavolajte: <a href="tel:+421949310411"><span class="nowrap">0949 310 411</span></a>.
@@ -1348,9 +1348,12 @@ src="https://www.facebook.com/tr?id=1074371878825995&ev=PageView&noscript=1"/></
     var tries = 0;
     function init() {
       if (window.Calendly && window.Calendly.initInlineWidget) {
+        parent.innerHTML = '';
         window.Calendly.initInlineWidget({ url: url, parentElement: parent });
-      } else if (tries++ < 50) {
+      } else if (tries++ < 75) {
         setTimeout(init, 200);
+      } else {
+        parent.innerHTML = '<p style="text-align:center;padding:40px 16px;color:var(--ink-muted);">Kalendár sa nepodarilo načítať. <a href="' + url + '" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;">Otvorte ho v novom okne.</a></p>';
       }
     }
     init();
