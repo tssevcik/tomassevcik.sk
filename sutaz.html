@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
-<meta name="description" content="Súťaž pre rodičov hokejistov a futbalistov 11 až 15 rokov z Trenčína a okolia. Hlavná výhra: 8-týždňový tréningový program 1 na 1 v hodnote 600 €. Prihlasovanie do 11. 10. 2026.">
+<meta name="description" content="Bezplatná konzultácia a pohybová diagnostika pre deti a mládež 7 až 15 rokov v HYBKO Trenčín. Zmeriame rýchlosť, silu, výskok a techniku dopadu a poviem vám, čo s tým. Vyberte si termín online.">
 <link rel="canonical" href="https://tomassevcik.sk/sutaz">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Tomáš Ševčík - Silovo-kondičný tréner detí a mládeže">
-<meta property="og:title" content="Vyhrajte 8-týždňový tréningový program pre vaše dieťa. Zadarmo.">
-<meta property="og:description" content="Súťaž pre rodičov hokejistov a futbalistov 11 až 15 rokov z Trenčína a okolia. Hlavná výhra: 8-týždňový tréningový program 1 na 1 v hodnote 600 €. Prihlasovanie do 11. 10. 2026.">
+<meta property="og:title" content="Bezplatná konzultácia a diagnostika pre vaše dieťa - HYBKO Trenčín">
+<meta property="og:description" content="Hodina v HYBKO Trenčín: zmeriame rýchlosť, silu, výskok a techniku dopadu a poviem vám, čo s tým. Pre deti a mládež 7 až 15 rokov. Vyberte si termín online.">
 <meta property="og:url" content="https://tomassevcik.sk/sutaz">
-<meta property="og:image" content="https://tomassevcik.sk/og-sutaz.jpg">
+<meta property="og:image" content="https://tomassevcik.sk/og-konzultacia.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -19,7 +19,7 @@
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@700&display=swap" rel="stylesheet">
-<title>Vyhrajte 8-týždňový tréningový program - Tomáš Ševčík</title>
+<title>Bezplatná konzultácia a diagnostika pre mladých športovcov - Tomáš Ševčík</title>
 <style>
   * {
     margin: 0;
@@ -979,6 +979,29 @@
   .ref-copy { padding: 11px 16px; border: 0; border-radius: 10px; background: var(--ink); color: #fff; font-weight: 600; font-size: 14px; cursor: pointer; white-space: nowrap; }
   .ref-copy.done { background: var(--success, #16a34a); }
   .ref-share { display: inline-block; margin-top: 12px; padding: 11px 16px; border-radius: 10px; background: #25D366; color: #fff; font-weight: 600; font-size: 14px; text-decoration: none; }
+
+  /* Konzultácia */
+  .prize-grid { grid-template-columns: minmax(0, 820px); }
+  .headline { font-size: clamp(28px, 3.6vw, 46px); max-width: none; white-space: nowrap; }
+  @media (max-width: 768px) { .headline { white-space: normal; } }
+  .headline .line { display: block; }
+  @media (max-width: 640px) { .headline .line { display: inline; } }
+  .form-card.wide { max-width: 900px; padding: 40px 32px 32px; }
+  .calendly-wrap { min-height: 700px; border-radius: 20px; overflow: hidden; background: var(--bg); }
+  .calendly-inline-widget { min-width: 280px; height: 740px; }
+  .calendly-fallback { text-align: center; font-size: 14px; color: var(--ink-subtle); margin-top: 16px; }
+  .calendly-fallback a { color: var(--accent); font-weight: 600; text-decoration: none; }
+  .booked { display: none; text-align: center; padding: 32px 0 8px; }
+  .booked.visible { display: block; }
+  .steps { list-style: none; counter-reset: step; margin-top: 8px; }
+  .steps li { counter-increment: step; display: flex; gap: 16px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 15px; color: var(--ink); }
+  .steps li:last-child { border-bottom: none; }
+  .steps li::before { content: counter(step); flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: white; font-weight: 700; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; }
+  .prize-note { font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 14px; }
+  @media (max-width: 768px) {
+    .form-card.wide { padding: 24px 12px 20px; }
+    .calendly-inline-widget { height: 900px; }
+  }
 </style>
 <!-- Meta Pixel -->
 <script>
@@ -1010,226 +1033,86 @@ src="https://www.facebook.com/tr?id=1074371878825995&ev=PageView&noscript=1"/></
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <div class="kicker">Súťaž · Prihlasovanie do 11. 10. 2026, 17:00</div>
     <h1 class="headline">
-      Vyhrajte <span class="nowrap">8-týždňový</span> tréningový program pre vaše dieťa. <span class="accent">Zadarmo.</span>
+      Bezplatná <span class="accent">diagnostika</span> mladého športovca.
     </h1>
     <p class="subheadline">
-      Pre hokejistov a futbalistov vo veku <span class="nowrap">11 až 15 rokov</span> hrajúcich v Trenčíne a okolí. Reálna hodnota programu <span class="nowrap">je 600 €</span>.
+      Pre mladých športovcov vo veku <span class="nowrap">7 až 15 rokov</span>, ktorí chcú napredovať.
     </p>
 
     <div class="video-wrap" id="heroVideoWrap">
-      <video id="heroVideo" class="hero-video" poster="/video-sutaz-poster.jpg" preload="none" playsinline controls>
-        <source src="/video-sutaz.mp4" type="video/mp4">
+      <video id="heroVideo" class="hero-video" poster="/video-poster.jpg" preload="none" playsinline controls>
+        <source src="/video-o-mne.mp4" type="video/mp4">
       </video>
       <button type="button" class="hero-video-play" id="heroVideoPlay" aria-label="Prehrať video">
         <span class="play-icon"></span>
-        <span class="video-label">Video · 3 minúty</span>
+        <span class="video-label">Video · 40 sekúnd</span>
       </button>
     </div>
 
     <p class="sub-cta">
-      Pozrite si krátke video a potom <a href="#formular">prihláste svoje dieťa</a> nižšie.
+      Pozrite si krátke video a potom si <a href="#rezervacia">vyberte termín</a> nižšie.
     </p>
-
-    <div class="countdown-wrap">
-      <div class="countdown-label">Prihlasovanie končí za</div>
-      <div class="countdown">
-        <div class="countdown-unit">
-          <div class="countdown-num" id="days">07</div>
-          <div class="countdown-desc">dní</div>
-        </div>
-        <div class="countdown-sep">:</div>
-        <div class="countdown-unit">
-          <div class="countdown-num" id="hours">00</div>
-          <div class="countdown-desc">hodín</div>
-        </div>
-        <div class="countdown-sep">:</div>
-        <div class="countdown-unit">
-          <div class="countdown-num" id="minutes">00</div>
-          <div class="countdown-desc">minút</div>
-        </div>
-        <div class="countdown-sep">:</div>
-        <div class="countdown-unit">
-          <div class="countdown-num" id="seconds">00</div>
-          <div class="countdown-desc">sekúnd</div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
-<!-- PRIZE BREAKDOWN -->
+<!-- ČO DOSTANETE -->
 <section class="section">
   <div class="container">
-    <div class="section-label">Ceny</div>
-    <h2 class="section-title">Čo môže vaše dieťa vyhrať</h2>
-    <p class="section-lead">
-      Jeden hlavný víťaz vyhrá kompletný <span class="nowrap">8-týždňový</span> tréningový program <span class="nowrap">1 na 1</span> priamo so mnou.<br>
-      Ďalšie vybrané deti získajú kompletnú diagnostiku a úvodný tréning v hodnote 100 €.
-    </p>
+    <h2 class="section-title">Čo vás na diagnostike čaká</h2>
 
     <div class="prize-grid">
       <div class="prize-card main">
-        <span class="prize-tag">Hlavná cena</span>
-        <h3 class="prize-title">Kompletný <span class="nowrap">8-týždňový</span> tréningový program <span class="nowrap">1 na 1</span></h3>
+        <span class="prize-tag">Bezplatne</span>
+        <h3 class="prize-title">Konzultácia a pohybová diagnostika</h3>
         <p class="prize-desc">
-          Víťaz absolvuje celý <span class="nowrap">8-týždňový</span> tréningový program v HYBKO Trenčín. Komplet zadarmo.
+          Približne 60 minút v HYBKO Trenčín.
         </p>
         <ul class="prize-list">
-          <li>Vstupná pohybová a kondičná diagnostika</li>
-          <li>Individuálny 8-týždňový tréningový plán</li>
-          <li>8 osobných tréningov 1 na 1</li>
-          <li>Priebežné merania</li>
-          <li>Týždenný report pre rodiča</li>
-          <li>Výživový a regeneračný protokol</li>
-          <li>Záverečný report s výsledkami</li>
+          <li>Úvodná konzultácia: kam chcete dieťa dostať, kde je teraz a čo ho tam dovedie</li>
+          <li>Pohybový screening</li>
+          <li>Šprint na 10 m a zmena smeru cez fotobunky</li>
+          <li>Výbušnosť horných a dolných končatín</li>
+          <li>Sila horných a dolných končatín</li>
+          <li>Výsledky s konkrétnymi číslami</li>
+          <li>Odporúčanie, čo s tým ďalej</li>
         </ul>
         <div class="prize-price">
           <div>
-            <div style="font-size: 12px; opacity: 0.6; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px;">Reálna hodnota</div>
-            <div class="price-original">600 €</div>
+            <div style="font-size: 12px; opacity: 0.6; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px;">Bežná cena</div>
+            <div class="price-original">100 €</div>
           </div>
           <div class="price-current">0 €</div>
         </div>
+        <p class="prize-note">Jediné, čo sa platí na mieste, je vstup do pohybového centra HYBKO <span class="nowrap">(6 €)</span>.</p>
       </div>
 
-      <div class="prize-card second">
-        <span class="prize-tag">Ďalšie vybrané deti</span>
-        <h3 class="prize-title" style="color: var(--ink);">Diagnostika a úvodný tréning</h3>
-        <p class="prize-desc" style="color: var(--ink-muted);">
-          Ďalším vybraným deťom ponúknem diagnostiku a úvodný tréning v HYBKO Trenčín. Komplet zadarmo.
-        </p>
-        <ul class="prize-list" style="color: var(--ink);">
-          <li>Vstupná pohybová a kondičná diagnostika</li>
-          <li>Úvodný tréning 1 na 1</li>
-          <li>Konkrétne odporúčania a konzultácia</li>
-          <li>Písomný report s číslami</li>
-        </ul>
-        <div class="prize-price">
-          <div>
-            <div style="font-size: 12px; color: var(--ink-subtle); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px;">Reálna hodnota</div>
-            <div class="price-original" style="color: var(--ink-muted);">100 €</div>
-          </div>
-          <div class="price-current">0 €</div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
 
-<!-- FORM -->
-<section id="formular" class="form-section">
-  <div class="form-card">
-    <div class="form-content">
-      <h2 class="form-title">Prihláste vaše dieťa do súťaže</h2>
-      <p class="form-sub">Ozvem sa vám osobne po vyžrebovaní.</p>
-
-      <form onsubmit="submitForm(event)">
-        <div class="form-group">
-          <label class="form-label" for="parent-name">Meno rodiča</label>
-          <input class="form-input" type="text" id="parent-name" name="parent-name" required placeholder="Jana Nováková">
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="phone">Telefón</label>
-          <input class="form-input" type="tel" id="phone" name="phone" required placeholder="+421 900 000 000">
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="email">E-mail</label>
-          <input class="form-input" type="email" id="email" name="email" required placeholder="jana@email.sk">
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="age">Vek dieťaťa</label>
-          <select class="form-select" id="age" name="age" required>
-            <option value="">Vyberte vek</option>
-            <option value="11">11 rokov</option>
-            <option value="12">12 rokov</option>
-            <option value="13">13 rokov</option>
-            <option value="14">14 rokov</option>
-            <option value="15">15 rokov</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="sport">Šport a klub</label>
-          <select class="form-select" id="sport" name="sport" required>
-            <option value="">Vyberte šport a klub</option>
-            <option value="hokej-dukla">Hokej - Dukla Trenčín</option>
-            <option value="hokej-iny">Hokej - iný klub</option>
-            <option value="futbal-as">Futbal - AS Trenčín</option>
-            <option value="futbal-iny">Futbal - iný klub</option>
-            <option value="iny">Iný šport</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="problem">Aký problém aktuálne riešite? <span style="color: var(--ink-subtle); font-weight: 400;">(voliteľné)</span></label>
-          <select class="form-select" id="problem" name="problem">
-            <option value="">Vyberte (voliteľné)</option>
-            <option value="bolesti">Bolesti kolien alebo členkov z rastového špurtu</option>
-            <option value="suboje">Prehráva 1v1 súboje</option>
-            <option value="lavicka">Sedí na lavičke, dostáva menej minút</option>
-            <option value="stredna">Mieri na športovú strednú alebo výber A-tímu</option>
-            <option value="ine">Iné / neviem presne</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="goal">Čo by ste chceli u svojho dieťaťa najviac zlepšiť?</label>
-          <select class="form-select" id="goal" name="goal" required>
-            <option value="">Vyberte</option>
-            <option value="rychlost">Rýchlosť a výbušnosť</option>
-            <option value="sila">Sila a kondícia</option>
-            <option value="koordinacia">Pohybové schopnosti a koordinácia</option>
-            <option value="vykon">Výkon na ihrisku / ľade</option>
-            <option value="sebavedomie">Sebavedomie a istota pri športe</option>
-            <option value="rozvoj">Celkový športový rozvoj</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="individual">Využíva vaše dieťa aktuálne aj individuálnu športovú prípravu?</label>
-          <select class="form-select" id="individual" name="individual" required>
-            <option value="">Vyberte</option>
-            <option value="pravidelne">Áno, pravidelne</option>
-            <option value="obcas">Áno, občas</option>
-            <option value="zvazujeme">Nie, ale zvažujeme to</option>
-            <option value="iba-klub">Nie, zatiaľ iba klubové tréningy</option>
-          </select>
-        </div>
-
-        <div class="form-checkbox">
-          <input type="checkbox" id="gdpr" name="gdpr" required>
-          <label for="gdpr">Súhlasím so spracovaním osobných údajov na účely súťaže. <a href="#legal">Podrobnosti tu.</a></label>
-        </div>
-
-        <button type="submit" class="btn-primary">Prihlásiť dieťa do súťaže</button>
-
-        <p class="form-trust">
-          Údaje slúžia iba na vyhodnotenie súťaže a oznámenie výsledku.
-        </p>
-      </form>
-    </div>
-
-    <div class="form-success" id="successMsg">
-      <div class="success-icon">✓</div>
-      <h3 style="font-size: 28px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 12px;">Ste v hre.</h3>
-      <p style="color: var(--ink-muted); font-size: 17px; line-height: 1.5;">
-        Vaše dieťa je zaregistrované do súťaže. Žrebovanie prebehne v pondelok <span class="nowrap">12. októbra</span>. Potvrdenie vám práve prišlo e-mailom.
-      </p>
-
-      <div class="ref-box">
-        <div class="ref-title">Deti sa najviac tešia z tréningu, keď na ňom majú kamaráta.</div>
-        <p class="ref-text">Ak poznáte rodiča, ktorého dieťa športuje, pošlite mu svoj osobný odkaz. <strong>Za každého kamaráta, ktorý sa cez neho prihlási, získate ďalšiu šancu vyhrať 8-týždňový program. Bez limitu - 5 kamarátov = 5 ďalších šancí.</strong></p>
-        <div class="ref-link-row">
-          <input class="ref-link" id="refLink" type="text" readonly value="">
-          <button type="button" class="ref-copy" id="refCopy">Kopírovať môj odkaz</button>
-        </div>
-        <a class="ref-share" id="refWhatsapp" href="#" target="_blank" rel="noopener">Poslať cez WhatsApp</a>
+<!-- REZERVÁCIA -->
+<section id="rezervacia" class="form-section">
+  <div class="form-card wide">
+    <div class="form-content" id="bookingContent">
+      <h2 class="form-title">Vyberte si termín</h2>
+      <p class="form-sub">Kliknite na deň a hodinu, ktoré vám vyhovujú.<br>Potvrdenie príde e-mailom, stretneme sa v pohybovom centre HYBKO Trenčín.</p>
+      <div class="calendly-wrap">
+        <div class="calendly-inline-widget" id="calendly"></div>
       </div>
+      <p class="calendly-fallback">
+        Ak sa kalendár nenačíta, <a id="calendlyLink" href="#" target="_blank" rel="noopener">otvorte ho tu</a> alebo zavolajte: <a href="tel:+421949310411"><span class="nowrap">0949 310 411</span></a>.
+      </p>
+      <p class="form-trust">
+        Údaje slúžia iba na dohodnutie a potvrdenie stretnutia. Nepoužívam ich na marketing a neposkytujem ich ďalej.
+      </p>
+    </div>
+    <div class="booked" id="bookedMsg">
+      <div class="success-icon">✓</div>
+      <h3 style="font-size: 28px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 12px;">Termín je rezervovaný.</h3>
+      <p style="color: var(--ink-muted); font-size: 17px; line-height: 1.5;">
+        Potvrdenie vám práve prišlo e-mailom. Nájdete v ňom aj krátke video, čo vás na stretnutí čaká a čo si doniesť. Teším sa na vás v HYBKO.
+      </p>
     </div>
   </div>
 </section>
@@ -1238,7 +1121,7 @@ src="https://www.facebook.com/tr?id=1074371878825995&ev=PageView&noscript=1"/></
 <section class="section">
   <div class="container">
     <div class="section-label">Váš tréner</div>
-    <h2 class="section-title" style="margin-bottom: 56px;">Kto bude vaše dieťa trénovať</h2>
+    <h2 class="section-title" style="margin-bottom: 56px;">Kto bude s vaším dieťaťom pracovať</h2>
     <div class="coach-grid">
       <div class="coach-photo"><img src="/trener.jpg" alt="Tomáš Ševčík - silovo-kondičný tréner detí a mládeže, HYBKO Trenčín" loading="lazy" width="900" height="1125"></div>
       <div class="coach-body">
@@ -1251,7 +1134,7 @@ src="https://www.facebook.com/tr?id=1074371878825995&ev=PageView&noscript=1"/></
           Mám za sebou trénerskú kvalifikáciu 3. stupňa, <span class="nowrap">8-mesačnú</span> stáž v ELIX Bratislava, kde sa pripravujú vrcholoví športovci, a 7 špecializovaných certifikátov.
         </p>
         <p>
-          Každé dieťa trénujem osobne <span class="nowrap">1 na 1</span>, preto prijímam len obmedzený počet detí. Víťaz súťaže dostane jedno z týchto miest.
+          Každé dieťa trénujem osobne <span class="nowrap">1 na 1</span>, preto prijímam len obmedzený počet detí. Konzultácia je prvý krok, na ktorom sa spolu rozhodneme, či má tréning u mňa pre vaše dieťa zmysel.
         </p>
       </div>
     </div>
@@ -1327,41 +1210,41 @@ src="https://www.facebook.com/tr?id=1074371878825995&ev=PageView&noscript=1"/></
     <div class="faq">
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-question">
-          <span>Ako losovanie prebieha?</span>
+          <span>Koľko to stojí?</span>
           <div class="faq-toggle"></div>
         </div>
         <div class="faq-answer">
-          Po skončení súťaže (v pondelok 12. 10.) vyžrebujem spomedzi všetkých prihlásených hlavného víťaza. Ďalším vybraným deťom ponúknem diagnostiku a úvodný tréning zadarmo. Rodičom, ktorých sa to týka, zavolám po vyžrebovaní.
+          Konzultácia aj diagnostika sú zadarmo. Jediné, čo sa platí na mieste, je vstup do pohybového centra HYBKO <span class="nowrap">(6 €)</span>.
         </div>
       </div>
 
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-question">
-          <span>Kto sa môže prihlásiť?</span>
+          <span>Pre koho je diagnostika určená?</span>
           <div class="faq-toggle"></div>
         </div>
         <div class="faq-answer">
-          Súťaž je pre deti vo veku <span class="nowrap">11 až 15 rokov</span>, ktoré aktívne športujú - hokej, futbal alebo iný šport. Keďže tréningy prebiehajú osobne v HYBKO Trenčín, je určená rodinám z Trenčína a okolia <span class="nowrap">(do 50 km)</span>.
+          Pre deti a mládež vo veku <span class="nowrap">7 až 15 rokov</span>, ktoré športujú - hokej, futbal, iný šport. Keďže tréningy prebiehajú osobne v HYBKO Trenčín, je určená rodinám z Trenčína a okolia.
         </div>
       </div>
 
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-question">
-          <span>Kedy sa program začína?</span>
+          <span>Musím byť pri tom aj ja?</span>
           <div class="faq-toggle"></div>
         </div>
         <div class="faq-answer">
-          Začiatok si dohodneme spoločne - s hlavným víťazom aj s ďalšími vybranými deťmi. Termíny prispôsobím vášmu rozvrhu a mojim voľným termínom, tréningy prebiehajú v HYBKO Trenčín.
+          Áno. Ste pri tom celý čas, vidíte všetko, čo s dieťaťom robím, a na konci vám výsledky vysvetlím osobne.
         </div>
       </div>
 
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-question">
-          <span>Čo ak sa nemôžem osobne dostaviť do Trenčína?</span>
+          <span>Čo si máme doniesť?</span>
           <div class="faq-toggle"></div>
         </div>
         <div class="faq-answer">
-          Program prebieha výhradne osobne <span class="nowrap">1 na 1</span> v HYBKO Trenčín, online forma nie je možná. Počas 8 týždňov treba dochádzať pravidelne - preto je súťaž určená rodinám z Trenčína a okolia <span class="nowrap">do 50 km</span>.
+          Športové oblečenie, čisté tenisky a fľašu s vodou. Príďte prosím o 5 minút skôr. Ak bude dieťa v deň stretnutia choré, zranené alebo tesne po ťažkom tréningu, termín si v potvrdzovacom e-maili jedným klikom presuniete - diagnostika má zmysel len vtedy, keď je dieťa v normálnom stave.
         </div>
       </div>
 
@@ -1371,17 +1254,7 @@ src="https://www.facebook.com/tr?id=1074371878825995&ev=PageView&noscript=1"/></
           <div class="faq-toggle"></div>
         </div>
         <div class="faq-answer">
-          Všetko si môžete overiť. Trénujem pod vlastným menom - web <a href="https://tomassevcik.sk" target="_blank" rel="noopener">tomassevcik.sk</a>, Instagram <a href="https://www.instagram.com/ts.sevcik" target="_blank" rel="noopener">@ts.sevcik</a>, tréningy prebiehajú v pohybovom centre HYBKO v Trenčíne. Recenzie rodičov máte vyššie aj na Googli.<br>A ak chcete, pred prihlásením mi pokojne zavolajte: <a href="tel:+421949310411"><span class="nowrap">0949 310 411</span></a>.
-        </div>
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question">
-          <span>Musíme niečo kupovať?</span>
-          <div class="faq-toggle"></div>
-        </div>
-        <div class="faq-answer">
-          Nie. Prihlásenie je zadarmo a výhry tiež - hlavný víťaz dostane celý <span class="nowrap">8-týždňový</span> program bez poplatku, ďalšie vybrané deti diagnostiku a úvodný tréning. Jediné, čo sa platí na mieste, je vstup do pohybového centra HYBKO <span class="nowrap">(6 €)</span> za každú návštevu. Žiadne iné náklady, žiadny záväzok pokračovať.
+          Všetko si môžete overiť. Trénujem pod vlastným menom - web <a href="https://tomassevcik.sk" target="_blank" rel="noopener">tomassevcik.sk</a>, Instagram <a href="https://www.instagram.com/ts.sevcik" target="_blank" rel="noopener">@ts.sevcik</a>, tréningy prebiehajú v pohybovom centre HYBKO v Trenčíne. Recenzie rodičov máte vyššie aj na Googli.<br>A ak chcete, pred rezerváciou mi pokojne zavolajte: <a href="tel:+421949310411"><span class="nowrap">0949 310 411</span></a>.
         </div>
       </div>
     </div>
@@ -1392,56 +1265,13 @@ src="https://www.facebook.com/tr?id=1074371878825995&ev=PageView&noscript=1"/></
 <section class="section" id="legal">
   <div class="container-narrow">
     <div class="legal">
-      <div class="section-label" style="margin-bottom: 16px;">Podmienky súťaže</div>
+      <div class="section-label" style="margin-bottom: 16px;">Ochrana osobných údajov</div>
       <p style="margin-bottom: 12px;">
-        Súťaž organizuje Tomáš Ševčík, silovo-kondičný tréner, HYBKO Trenčín. Prihlásenie je bezplatné a dobrovoľné, súťaž trvá do 11. 10. 2026 (17:00). Hlavného víťaza vyberám losovaním, pričom za každého rodiča prihláseného cez váš osobný odkaz získate jeden žreb navyše. Ďalším vybraným účastníkom môžem ponúknuť bezplatnú diagnostiku a úvodný tréning. O výhre informujem telefonicky po vyžrebovaní. Jediný náklad pre výhercu je vstup do pohybového centra HYBKO <span class="nowrap">(6 €)</span>.
+        Rezerváciou termínu súhlasíte so spracovaním osobných údajov (meno, telefón, e-mail, vek dieťaťa, šport) na účel dohodnutia a uskutočnenia stretnutia. Údaje nepoužívam na marketing a neposkytujem ich ďalej. Rezervačný kalendár prevádzkuje služba Calendly, ktorá údaje spracúva podľa vlastných podmienok ochrany súkromia. Máte právo na prístup, opravu aj výmaz - stačí napísať na <a href="mailto:ts.sevcik@gmail.com">ts.sevcik@gmail.com</a>.
       </p>
-      <p style="margin-bottom: 12px;">
-        Prihlásením súhlasíte so spracovaním osobných údajov (meno, telefón, e-mail, vek dieťaťa, šport) na účely priebehu súťaže a oznámenia výsledku. Údaje nepoužívam na marketing a neposkytujem ich ďalej. Máte právo na prístup, opravu aj výmaz - stačí napísať na <a href="mailto:ts.sevcik@gmail.com">ts.sevcik@gmail.com</a>.
+      <p>
+        Prevádzkovateľ: Tomáš Ševčík, silovo-kondičný tréner, IČO: <span class="nowrap">57 938 423</span>, pohybové centrum HYBKO, Ľudovíta Stárka 2843, 911 05 Trenčín.
       </p>
-      <p style="margin-bottom: 20px;">
-        Táto súťaž nie je žiadnym spôsobom sponzorovaná, podporovaná ani spravovaná spoločnosťou Instagram/Meta.
-      </p>
-
-      <details class="rules" id="pravidla">
-        <summary>Kompletné pravidlá súťaže →</summary>
-        <div class="rules-body">
-          <h4>1. Organizátor</h4>
-          <p>Organizátorom súťaže je Tomáš Ševčík, silovo-kondičný tréner pôsobiaci v pohybovom centre HYBKO, Ľudovíta Stárka 2843, 911 05 Trenčín. Kontakt: <a href="mailto:ts.sevcik@gmail.com">ts.sevcik@gmail.com</a>, <span class="nowrap">0949 310 411</span>.</p>
-
-          <h4>2. Trvanie súťaže</h4>
-          <p>Súťaž trvá od 3. 10. 2026 (9:00) do 11. 10. 2026 (17:00). Zverejnená je na Instagrame @ts.sevcik. Prihlášky doručené po uzávierke sa do žrebovania nezaraďujú.</p>
-
-          <h4>3. Kto sa môže zapojiť</h4>
-          <p>Do súťaže môže dieťa prihlásiť jeho rodič alebo zákonný zástupca. Dieťa musí mať v čase prihlásenia 11 až 15 rokov, aktívne športovať a bývať v Trenčíne alebo v okolí do 50 km, aby mohlo pravidelne dochádzať na tréningy. Na jedno dieťa je možná jedna prihláška; duplicitné prihlášky sa vyradia.</p>
-
-          <h4>4. Ako sa zapojiť</h4>
-          <p>Vyplnením a odoslaním prihlasovacieho formulára na tejto stránke. Účasť je bezplatná a nie je podmienená žiadnym nákupom.</p>
-
-          <h4>5. Výhry</h4>
-          <p><strong>Hlavná cena:</strong> kompletný 8-týždňový tréningový program 1 na 1 v HYBKO Trenčín (vstupná pohybová a kondičná diagnostika, individuálny tréningový plán, 8 osobných tréningov, priebežné merania, týždenný report pre rodiča, výživový a regeneračný protokol, záverečný report) v hodnote 600 €.<br>
-          <strong>Ďalšie vybrané deti:</strong> diagnostika a úvodný tréning v HYBKO Trenčín (vstupná pohybová a kondičná diagnostika, úvodný tréning 1 na 1, konkrétne odporúčania s konzultáciou, písomný report) v hodnote 100 €.</p>
-          <p>Výhry nie je možné vymeniť za peniaze ani previesť na inú osobu. Vstup do pohybového centra HYBKO (6 € za návštevu) nie je súčasťou výhry a hradí ho účastník.</p>
-
-          <h4>6. Odporúčania a žreby navyše</h4>
-          <p>Každý účastník získa po prihlásení osobný odporúčací odkaz. Za každého ďalšieho rodiča, ktorý sa do súťaže prihlási cez tento odkaz a uvedie iný e-mail aj telefónne číslo než odporúčajúci, získa odporúčajúci účastník jeden žreb navyše. Počet žrebov navyše nie je obmedzený. Prihlášky s rovnakým e-mailom alebo telefónnym číslom sa počítajú ako jedna.</p>
-
-          <h4>7. Žrebovanie a oznámenie výsledku</h4>
-          <p>Hlavného víťaza vyberá organizátor náhodným žrebovaním spomedzi všetkých platných prihlášok (s prihliadnutím na počet žrebov podľa bodu 6) v pondelok 12. 10. 2026 a kontaktuje ho telefonicky. Ak sa výhercu nepodarí zastihnúť ani do 7 dní od vyžrebovania alebo výhru odmietne, organizátor vyžrebuje náhradníka. Ďalším účastníkom môže organizátor podľa vlastného uváženia ponúknuť bezplatnú diagnostiku a úvodný tréning; počet takto vybraných detí nie je obmedzený a na túto ponuku nevzniká nárok.</p>
-
-          <h4>8. Čerpanie výhry</h4>
-          <p>Termíny si výherca a organizátor dohodnú po vzájomnej dohode podľa rozvrhu dieťaťa a voľných termínov organizátora. Čerpanie výhry musí začať do jedného mesiaca od vyžrebovania, inak nárok na výhru zaniká.</p>
-
-          <h4>9. Ochrana osobných údajov</h4>
-          <p>Odoslaním prihlášky udeľuje rodič alebo zákonný zástupca súhlas so spracovaním osobných údajov v rozsahu meno rodiča, telefón, e-mail, vek dieťaťa a šport, a to výlučne na účely priebehu súťaže, žrebovania a oznámenia výsledku. Údaje sa nepoužívajú na marketing a neposkytujú sa iným osobám. Údaje neúspešných účastníkov organizátor vymaže do 30 dní po skončení súťaže; údaje výhercov uchováva po dobu čerpania výhry. Súhlas je možné kedykoľvek odvolať a uplatniť právo na prístup, opravu alebo výmaz údajov e-mailom na <a href="mailto:ts.sevcik@gmail.com">ts.sevcik@gmail.com</a>.</p>
-
-          <h4>10. Instagram</h4>
-          <p>Táto súťaž nie je žiadnym spôsobom sponzorovaná, podporovaná, spravovaná ani spojená so spoločnosťou Instagram alebo Meta. Informácie poskytujete organizátorovi súťaže, nie spoločnosti Instagram.</p>
-
-          <h4>11. Ostatné</h4>
-          <p>Organizátor si vyhradzuje právo súťaž zo závažných dôvodov skrátiť, prerušiť alebo zrušiť a právo vyradiť prihlášky, ktoré nespĺňajú tieto pravidlá. Účasťou v súťaži účastník vyjadruje súhlas s týmito pravidlami.</p>
-        </div>
-      </details>
     </div>
   </div>
 </section>
@@ -1456,51 +1286,18 @@ src="https://www.facebook.com/tr?id=1074371878825995&ev=PageView&noscript=1"/></
 <!-- STICKY CTA -->
 <div class="sticky-bar" id="stickyBar">
   <div class="sticky-text">
-    <div class="sticky-label">Prihlasovanie končí</div>
-    <div class="sticky-count" id="stickyCount">do 11. 10. 17:00</div>
+    <div class="sticky-label">Bezplatná konzultácia</div>
+    <div class="sticky-count">HYBKO Trenčín · 60 minút</div>
   </div>
-  <button class="btn-sticky" onclick="document.getElementById('formular').scrollIntoView({behavior:'smooth'})">
-    Prihlásiť dieťa →
+  <button class="btn-sticky" onclick="document.getElementById('rezervacia').scrollIntoView({behavior:'smooth'})">
+    Vybrať termín →
   </button>
 </div>
 
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <script>
-  // Odpočet do uzávierky prihlášok
-  const deadline = new Date('2026-10-11T17:00:00+02:00');
-
-  function updateCountdown() {
-    const now = new Date();
-    const diff = deadline - now;
-
-    if (diff <= 0) {
-      document.getElementById('days').textContent = '00';
-      document.getElementById('hours').textContent = '00';
-      document.getElementById('minutes').textContent = '00';
-      document.getElementById('seconds').textContent = '00';
-      document.getElementById('stickyCount').textContent = 'Prihlasovanie skončilo';
-      const fc = document.querySelector('.form-content');
-      if (fc && !document.getElementById('closedMsg')) {
-        fc.innerHTML = '<div id="closedMsg" style="text-align:center;padding:24px 0;"><h3 style="font-size:24px;margin-bottom:10px;">Prihlasovanie je ukončené</h3><p style="color:var(--ink-muted);">Súťaž skončila 11. 10. 2026 o 17:00. Žrebovanie je v pondelok 12. 10., výhercom sa ozvem telefonicky.</p></div>';
-      }
-      return;
-    }
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-    document.getElementById('days').textContent = String(days).padStart(2, '0');
-    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-
-    document.getElementById('stickyCount').textContent =
-      `za ${days}d ${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m`;
-  }
-
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
+  // Rezervačný kalendár - sem patrí odkaz na udalosť v Calendly
+  const CALENDLY_URL = 'https://calendly.com/tomassevcik/konzultacia';
 
   // Sticky bar visibility
   const stickyBar = document.getElementById('stickyBar');
@@ -1517,26 +1314,6 @@ src="https://www.facebook.com/tr?id=1074371878825995&ev=PageView&noscript=1"/></
     el.classList.toggle('active');
   }
 
-  // Odoslanie prihlášky do Google tabuľky
-  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbytMvMcPjaWJD2jt2YF1Q1FpEj-Nhg6mwMIeeX_UaLdMX5XlxN2B_kdpk_DC-NeuVI/exec';
-
-  function labelOf(form, name) {
-    const el = form.elements[name];
-    if (!el) return '';
-    if (el.tagName === 'SELECT') {
-      const opt = el.options[el.selectedIndex];
-      return opt && opt.value ? opt.text.trim() : '';
-    }
-    return (el.value || '').trim();
-  }
-
-  // Odporúčací kód: zachytiť ?ref= z odkazu (zapamätať aj po návrate na stránku)
-  (function () {
-    const ref = new URLSearchParams(location.search).get('ref');
-    if (ref && /^[A-Z0-9]{6}$/i.test(ref)) {
-      try { localStorage.setItem('sutazRef', ref.toUpperCase()); } catch (_) {}
-    }
-  })();
   // Atribúcia reklám: zachytiť UTM parametre a ad_id z URL (uložiť, aby ostali aj po návrate na stránku)
   var UTM_KEYS = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','ad_id'];
   (function () {
@@ -1545,7 +1322,7 @@ src="https://www.facebook.com/tr?id=1074371878825995&ev=PageView&noscript=1"/></
       var v = q.get(k);
       if (v) {
         try { sessionStorage.setItem(k, v); } catch (_) {}
-        try { localStorage.setItem('sutaz_' + k, v); } catch (_) {}
+        try { localStorage.setItem('konz_' + k, v); } catch (_) {}
       }
     });
   })();
@@ -1554,63 +1331,39 @@ src="https://www.facebook.com/tr?id=1074371878825995&ev=PageView&noscript=1"/></
     UTM_KEYS.forEach(function (k) {
       var v = '';
       try { v = sessionStorage.getItem(k) || ''; } catch (_) {}
-      if (!v) { try { v = localStorage.getItem('sutaz_' + k) || ''; } catch (_) {} }
+      if (!v) { try { v = localStorage.getItem('konz_' + k) || ''; } catch (_) {} }
       out[k] = v;
     });
     return out;
   }
-  function getIncomingRef() {
-    try { return localStorage.getItem('sutazRef') || ''; } catch (_) { return ''; }
-  }
-  function makeRefCode() {
-    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-    let out = '';
-    for (let i = 0; i < 6; i++) out += chars[Math.floor(Math.random() * chars.length)];
-    return out;
-  }
 
-  async function submitForm(e) {
-    e.preventDefault();
-    const form = e.target;
-    const btn = form.querySelector('button[type="submit"]');
-    const originalText = btn.textContent;
-    btn.disabled = true;
-    btn.textContent = 'Odosielam...';
-
-    const myCode = makeRefCode();
-    const incomingRef = getIncomingRef();
-    const body = new URLSearchParams({
-      'parent-name': labelOf(form, 'parent-name'),
-      'phone':       labelOf(form, 'phone'),
-      'email':       labelOf(form, 'email'),
-      'age':         labelOf(form, 'age'),
-      'sport':       labelOf(form, 'sport'),
-      'problem':     labelOf(form, 'problem'),
-      'goal':        labelOf(form, 'goal'),
-      'individual':  labelOf(form, 'individual'),
-      'code':        myCode,
-      'ref':         incomingRef === myCode ? '' : incomingRef
-    });
+  // Calendly: vložiť kalendár, preniesť UTM, zachytiť rezerváciu
+  (function () {
     var utm = getUtm();
-    UTM_KEYS.forEach(function (k) { body.append(k, utm[k]); });
-
-    try {
-      await fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', body });
-      if (typeof fbq === 'function') fbq('track', 'Lead');
-      document.querySelector('.form-content').style.display = 'none';
-      const link = 'https://tomassevcik.sk/sutaz?ref=' + myCode;
-      document.getElementById('refLink').value = link;
-      const msg = 'Pozri si túto súťaž pre deti, ktoré športujú - 8-týždňový tréningový program zadarmo: ' + link;
-      document.getElementById('refWhatsapp').href = 'https://wa.me/?text=' + encodeURIComponent(msg);
-      const ok = document.getElementById('successMsg');
-      ok.classList.add('active');
-      ok.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } catch (err) {
-      btn.disabled = false;
-      btn.textContent = originalText;
-      alert('Prihlášku sa nepodarilo odoslať. Skúste to prosím znova, alebo mi napíšte na ts.sevcik@gmail.com.');
+    var params = new URLSearchParams({ hide_gdpr_banner: '1', primary_color: 'ff6b00', text_color: '1d1d1f', background_color: 'ffffff' });
+    UTM_KEYS.forEach(function (k) { if (utm[k]) params.set(k === 'ad_id' ? 'utm_term' : k, utm[k]); });
+    var url = CALENDLY_URL + (CALENDLY_URL.indexOf('?') > -1 ? '&' : '?') + params.toString();
+    document.getElementById('calendlyLink').href = url;
+    var parent = document.getElementById('calendly');
+    var tries = 0;
+    function init() {
+      if (window.Calendly && window.Calendly.initInlineWidget) {
+        window.Calendly.initInlineWidget({ url: url, parentElement: parent });
+      } else if (tries++ < 50) {
+        setTimeout(init, 200);
+      }
     }
-  }
+    init();
+    window.addEventListener('message', function (e) {
+      if (!e.data || typeof e.data.event !== 'string' || e.data.event.indexOf('calendly') !== 0) return;
+      if (e.data.event === 'calendly.event_scheduled') {
+        try { if (typeof fbq === 'function') fbq('track', 'Schedule'); } catch (_) {}
+        document.getElementById('bookingContent').style.display = 'none';
+        document.getElementById('bookedMsg').classList.add('visible');
+        document.getElementById('rezervacia').scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  })();
 
   // Video play placeholder
   const hvBtn = document.getElementById('heroVideoPlay');
@@ -1621,18 +1374,6 @@ src="https://www.facebook.com/tr?id=1074371878825995&ev=PageView&noscript=1"/></
       hvEl.play();
     });
     hvEl.addEventListener('ended', function () { hvBtn.style.display = 'block'; });
-  }
-
-  const refCopyBtn = document.getElementById('refCopy');
-  if (refCopyBtn) {
-    refCopyBtn.addEventListener('click', async function () {
-      const input = document.getElementById('refLink');
-      try { await navigator.clipboard.writeText(input.value); }
-      catch (_) { input.select(); document.execCommand('copy'); }
-      refCopyBtn.textContent = 'Skopírované';
-      refCopyBtn.classList.add('done');
-      setTimeout(function () { refCopyBtn.textContent = 'Kopírovať môj odkaz'; refCopyBtn.classList.remove('done'); }, 2500);
-    });
   }
 </script>
 
