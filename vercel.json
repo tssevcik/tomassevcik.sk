@@ -1,4 +1,8 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/sutaz", "destination": "/diagnostika", "permanent": true },
+    { "source": "/konzultacia", "destination": "/diagnostika", "permanent": true }
+  ]
 }
