@@ -966,6 +966,7 @@
   .rules-body p { margin: 0 0 8px; }
 
   .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; border-radius: inherit; z-index: 1; }
+  iframe.hero-video { z-index: 2; border: 0; background: #000; }
   .hero-video-play { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background: rgba(0,0,0,.18); cursor: pointer; z-index: 3; border-radius: inherit; transition: background .25s; }
   .hero-video-play:hover { background: rgba(0,0,0,.28); }
   .hero-video-play .play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
@@ -981,7 +982,22 @@
   .ref-share { display: inline-block; margin-top: 12px; padding: 11px 16px; border-radius: 10px; background: #25D366; color: #fff; font-weight: 600; font-size: 14px; text-decoration: none; }
 
   /* Konzultácia */
-  .prize-grid { grid-template-columns: minmax(0, 820px); }
+  /* Referencie - pohyblivý pás ako na hlavnom webe */
+  .tst-marquee { position: relative; width: 100%; overflow: hidden; padding: 6px 0;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent); }
+  .tst-track { display: flex; gap: 20px; width: max-content; animation: tstScroll 60s linear infinite; }
+  .tst-marquee:hover .tst-track { animation-play-state: paused; }
+  .tst-track .testimonial { flex: 0 0 360px; width: 360px; padding: 28px 26px; }
+  .tst-track .testimonial-quote { font-size: 15px; line-height: 1.55; margin-bottom: 18px; }
+  @keyframes tstScroll { from { transform: translate3d(0,0,0); } to { transform: translate3d(calc(-50% - 10px),0,0); } }
+  @media (max-width: 640px) { .tst-track .testimonial { flex-basis: 280px; width: 280px; padding: 22px 20px; } .tst-track { animation-duration: 48s; } }
+  @media (prefers-reduced-motion: reduce) { .tst-track { animation: none; overflow-x: auto; } }
+  .hero .container { text-align: center; }
+  .hero .headline, .hero .subheadline { margin-left: auto; margin-right: auto; }
+  .hero-cta { display: inline-block; width: auto; text-decoration: none; margin-top: 28px; padding: 18px 36px; }
+  .prize-grid { grid-template-columns: minmax(0, 820px); justify-content: center; }
+  .section-title.section-center { text-align: center; margin-left: auto; margin-right: auto; }
   .headline { font-size: clamp(28px, 3.6vw, 46px); max-width: none; white-space: nowrap; }
   @media (max-width: 768px) { .headline { white-space: normal; } }
   .headline .line { display: block; }
@@ -1041,25 +1057,21 @@ src="https://www.facebook.com/tr?id=1074371878825995&ev=PageView&noscript=1"/></
     </p>
 
     <div class="video-wrap" id="heroVideoWrap">
-      <video id="heroVideo" class="hero-video" poster="/video-poster.jpg" preload="none" playsinline controls>
-        <source src="/video-o-mne.mp4" type="video/mp4">
-      </video>
+      <img class="hero-video" src="/video-diagnostika-poster.jpg" alt="Tomáš Ševčík v pohybovom centre HYBKO" width="1200" height="900" loading="eager" decoding="async">
       <button type="button" class="hero-video-play" id="heroVideoPlay" aria-label="Prehrať video">
         <span class="play-icon"></span>
-        <span class="video-label">Video · 40 sekúnd</span>
+        <span class="video-label">Video · 6 minút</span>
       </button>
     </div>
 
-    <p class="sub-cta">
-      Pozrite si krátke video a potom si <a href="#rezervacia">vyberte termín</a> nižšie.
-    </p>
+    <a href="#rezervacia" class="btn-primary hero-cta">Vybrať termín</a>
   </div>
 </section>
 
 <!-- ČO DOSTANETE -->
 <section class="section">
   <div class="container">
-    <h2 class="section-title">Čo vás na diagnostike čaká</h2>
+    <h2 class="section-title section-center">Čo vás na diagnostike čaká</h2>
 
     <div class="prize-grid">
       <div class="prize-card main">
@@ -1086,7 +1098,6 @@ src="https://www.facebook.com/tr?id=1074371878825995&ev=PageView&noscript=1"/></
         </div>
         <p class="prize-note">Jediné, čo sa platí na mieste, je vstup do pohybového centra HYBKO <span class="nowrap">(6 €)</span>.</p>
       </div>
-
     </div>
   </div>
 </section>
@@ -1121,7 +1132,7 @@ src="https://www.facebook.com/tr?id=1074371878825995&ev=PageView&noscript=1"/></
 <section class="section">
   <div class="container">
     <div class="section-label">Váš tréner</div>
-    <h2 class="section-title" style="margin-bottom: 56px;">Kto bude s vaším dieťaťom pracovať</h2>
+    <h2 class="section-title" style="margin-bottom: 56px;">Kto bude vaše dieťa trénovať</h2>
     <div class="coach-grid">
       <div class="coach-photo"><img src="/trener.jpg" alt="Tomáš Ševčík - silovo-kondičný tréner detí a mládeže, HYBKO Trenčín" loading="lazy" width="900" height="1125"></div>
       <div class="coach-body">
@@ -1145,9 +1156,10 @@ src="https://www.facebook.com/tr?id=1074371878825995&ev=PageView&noscript=1"/></
 <section class="section">
   <div class="container">
     <div class="section-label">Povedali o mne</div>
-    <h2 class="section-title" style="margin-bottom: 56px;">Skúsenosti mojich klientov</h2>
-
-    <div class="testimonials">
+    <h2 class="section-title" style="margin-bottom: 40px;">Skúsenosti mojich klientov</h2>
+  </div>
+  <div class="tst-marquee">
+    <div class="tst-track">
       <div class="testimonial">
         <p class="testimonial-quote">Chodíme cvičiť s 9-ročným synom po opakovanej zlomenine nohy. Syn sa na tréningy teší, prístup je skvelý - získal si ho od prvej hodiny. Každým tréningom vidno zlepšenie. Určite odporúčame.</p>
         <div class="testimonial-author">
@@ -1155,7 +1167,6 @@ src="https://www.facebook.com/tr?id=1074371878825995&ev=PageView&noscript=1"/></
           <div class="testimonial-sub">Návrat po zranení</div>
         </div>
       </div>
-
       <div class="testimonial">
         <p class="testimonial-quote">Pán Ševčík je úžasný kondičný tréner so skvelým prístupom k deťom. Oceňujem najmä jeho kamarátsku, ale profesionálnu komunikáciu, schopnosť udržať pozornosť počas celého tréningu a pozitívny vplyv na synovo sebavedomie. Spolu prekonávajú jeho limity a je fascinujúce sledovať, ako syn športovo aj mentálne rastie. Pomôže, povzbudí, namotivuje, pochváli. Syn chodí domov nadšený a motivovaný a páči sa mu, čo všetko už dokáže. Odporúčam na <span class="nowrap">110 %</span>!</p>
         <div class="testimonial-author">
@@ -1163,23 +1174,6 @@ src="https://www.facebook.com/tr?id=1074371878825995&ev=PageView&noscript=1"/></
           <div class="testimonial-sub">Šport - Futbal</div>
         </div>
       </div>
-
-      <div class="testimonial">
-        <p class="testimonial-quote">Tomáša Ševčíka ako osobného trénera v Trenčíne môžeme odporúčať! Synovia - hokejisti <span class="nowrap">(11 a 13 rokov)</span> - k nemu chodia na tréningy a sme maximálne spokojní. Má skvelý, profesionálny prístup k deťom a tréningy výborne prispôsobuje ich veku a potrebám na ľade. Chlapcov tréningy bavia a my vidíme progres. Ďakujeme a určite budeme pokračovať.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-name">Rodič, synovia 11 a 13 rokov</div>
-          <div class="testimonial-sub">Šport - Hokej</div>
-        </div>
-      </div>
-
-      <div class="testimonial">
-        <p class="testimonial-quote">Tomáš je profesionálny tréner, ktorý mi pomohol zlepšiť kondíciu, silu a úplne sa zbaviť bolesti kolien. Veľká vďaka za podporu a prístup.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-name">Jakub, 15 rokov</div>
-          <div class="testimonial-sub">Šport - Hokej</div>
-        </div>
-      </div>
-
       <div class="testimonial">
         <p class="testimonial-quote">Tréningy ma bavia. Robíme veľa hier a cvičení, ktoré mi pomáhajú vo futbale. Teraz vládzem viac behať a som rýchlejší a silnejší.</p>
         <div class="testimonial-author">
@@ -1187,12 +1181,67 @@ src="https://www.facebook.com/tr?id=1074371878825995&ev=PageView&noscript=1"/></
           <div class="testimonial-sub">Šport - Futbal</div>
         </div>
       </div>
-
       <div class="testimonial">
         <p class="testimonial-quote">Tréningy s Tomášom ma veľmi bavia. Motivuje ma jeho dobrá nálada a ľudský prístup. Pomohol mi dostať sa do formy a aj s bolesťou bedier.</p>
         <div class="testimonial-author">
           <div class="testimonial-name">Romana, 14 rokov</div>
           <div class="testimonial-sub">Šport - Parkurové jazdectvo</div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial-quote">Tomáša Ševčíka ako osobného trénera v Trenčíne môžeme odporúčať! Synovia - hokejisti <span class="nowrap">(11 a 13 rokov)</span> - k nemu chodia na tréningy a sme maximálne spokojní. Má skvelý, profesionálny prístup k deťom a tréningy výborne prispôsobuje ich veku a potrebám na ľade. Chlapcov tréningy bavia a my vidíme progres. Ďakujeme a určite budeme pokračovať.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-name">Rodič, synovia 11 a 13 rokov</div>
+          <div class="testimonial-sub">Šport - Hokej</div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial-quote">Tomáš je profesionálny tréner, ktorý mi pomohol zlepšiť kondíciu, silu a úplne sa zbaviť bolesti kolien. Veľká vďaka za podporu a prístup.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-name">Jakub, 15 rokov</div>
+          <div class="testimonial-sub">Šport - Hokej</div>
+        </div>
+      </div>
+      <div class="testimonial" aria-hidden="true">
+        <p class="testimonial-quote">Chodíme cvičiť s 9-ročným synom po opakovanej zlomenine nohy. Syn sa na tréningy teší, prístup je skvelý - získal si ho od prvej hodiny. Každým tréningom vidno zlepšenie. Určite odporúčame.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-name">Rodič, syn 9 rokov</div>
+          <div class="testimonial-sub">Návrat po zranení</div>
+        </div>
+      </div>
+      <div class="testimonial" aria-hidden="true">
+        <p class="testimonial-quote">Pán Ševčík je úžasný kondičný tréner so skvelým prístupom k deťom. Oceňujem najmä jeho kamarátsku, ale profesionálnu komunikáciu, schopnosť udržať pozornosť počas celého tréningu a pozitívny vplyv na synovo sebavedomie. Spolu prekonávajú jeho limity a je fascinujúce sledovať, ako syn športovo aj mentálne rastie. Pomôže, povzbudí, namotivuje, pochváli. Syn chodí domov nadšený a motivovaný a páči sa mu, čo všetko už dokáže. Odporúčam na <span class="nowrap">110 %</span>!</p>
+        <div class="testimonial-author">
+          <div class="testimonial-name">Rodič, syn 12 rokov</div>
+          <div class="testimonial-sub">Šport - Futbal</div>
+        </div>
+      </div>
+      <div class="testimonial" aria-hidden="true">
+        <p class="testimonial-quote">Tréningy ma bavia. Robíme veľa hier a cvičení, ktoré mi pomáhajú vo futbale. Teraz vládzem viac behať a som rýchlejší a silnejší.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-name">Tomáš, 10 rokov</div>
+          <div class="testimonial-sub">Šport - Futbal</div>
+        </div>
+      </div>
+      <div class="testimonial" aria-hidden="true">
+        <p class="testimonial-quote">Tréningy s Tomášom ma veľmi bavia. Motivuje ma jeho dobrá nálada a ľudský prístup. Pomohol mi dostať sa do formy a aj s bolesťou bedier.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-name">Romana, 14 rokov</div>
+          <div class="testimonial-sub">Šport - Parkurové jazdectvo</div>
+        </div>
+      </div>
+      <div class="testimonial" aria-hidden="true">
+        <p class="testimonial-quote">Tomáša Ševčíka ako osobného trénera v Trenčíne môžeme odporúčať! Synovia - hokejisti <span class="nowrap">(11 a 13 rokov)</span> - k nemu chodia na tréningy a sme maximálne spokojní. Má skvelý, profesionálny prístup k deťom a tréningy výborne prispôsobuje ich veku a potrebám na ľade. Chlapcov tréningy bavia a my vidíme progres. Ďakujeme a určite budeme pokračovať.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-name">Rodič, synovia 11 a 13 rokov</div>
+          <div class="testimonial-sub">Šport - Hokej</div>
+        </div>
+      </div>
+      <div class="testimonial" aria-hidden="true">
+        <p class="testimonial-quote">Tomáš je profesionálny tréner, ktorý mi pomohol zlepšiť kondíciu, silu a úplne sa zbaviť bolesti kolien. Veľká vďaka za podporu a prístup.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-name">Jakub, 15 rokov</div>
+          <div class="testimonial-sub">Šport - Hokej</div>
         </div>
       </div>
     </div>
@@ -1368,15 +1417,23 @@ src="https://www.facebook.com/tr?id=1074371878825995&ev=PageView&noscript=1"/></
     });
   })();
 
-  // Video play placeholder
+  // Video: YouTube (nezaradené) sa načíta až po kliknutí, do vtedy je tam vlastný obrázok
+  const YT_ID = 'pJkCJlm4aMk';
   const hvBtn = document.getElementById('heroVideoPlay');
-  const hvEl  = document.getElementById('heroVideo');
-  if (hvBtn && hvEl) {
+  const hvWrap = document.getElementById('heroVideoWrap');
+  if (hvBtn && hvWrap) {
     hvBtn.addEventListener('click', function () {
+      const f = document.createElement('iframe');
+      f.className = 'hero-video';
+      f.src = 'https://www.youtube-nocookie.com/embed/' + YT_ID + '?autoplay=1&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&hl=sk';
+      f.title = 'Čo vás čaká na diagnostike';
+      f.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture; fullscreen');
+      f.setAttribute('allowfullscreen', '');
+      f.setAttribute('frameborder', '0');
       hvBtn.style.display = 'none';
-      hvEl.play();
+      hvWrap.appendChild(f);
+      if (typeof fbq === 'function') fbq('trackCustom', 'VideoPlay');
     });
-    hvEl.addEventListener('ended', function () { hvBtn.style.display = 'block'; });
   }
 </script>
 
